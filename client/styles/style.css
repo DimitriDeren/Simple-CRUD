@@ -72,3 +72,36 @@ body {
     border: 1px solid #ccc;  
   }
 }
+
+/* Dashboard Screen Styling Start*/
+.home-view{
+  display: flex;
+  flex-direction: column;
+}
+
+.search-bar{
+  height: 20vh;
+}
+
+.recipe-view{
+  background-color: #EADEDA;
+  height: 90vh;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  
+}
+
+.recipe-widget{
+  width: 250px;
+  height: 250px;
+  border-style: solid;
+  background-color: #998888;
+  border-width: 2px;
+  border-radius: 50px;
+  margin: 30px;
+  
+}
+
+
+/* Dashboard Screen Styling End */
