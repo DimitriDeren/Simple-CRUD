@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import recipes from "./api/recipes.route.js";
 
 const app = express();
 
