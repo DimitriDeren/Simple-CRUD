@@ -1,0 +1,60 @@
+/* Add Recipe Styling Start */
+
+p{
+  margin: 5px;
+}
+
+.form-body{
+  border: 1px;
+  border-style: dashed;
+  display: flex;
+  justify-content: center;
+  padding: 10vh;
+  border: 1px;
+  border-style: dashed;
+  background-color:#fff2fb;
+}
+
+.form-fields{
+  display: flex;
+  justify-content: center;
+  padding:10;
+  border: 1px;
+  border-style: dashed;
+  flex-wrap: wrap;
+  background-color: white;
+}
+
+.input{
+  width:60vw;
+  height: 6vh;
+  border: 1px;
+  border-color: #b3b3b3;
+  background-color: #d9d8d7;
+  padding-left: 10px;
+  font-size: 16px;
+  margin:10px;
+}
+
+.ingredient-input{
+  width:20vw;
+  height: 6vh;
+  border: 1px;
+  border-color: #b3b3b3;
+  background-color: #d9d8d7;
+  padding-left: 10px;
+  font-size: 16px;
+  margin:10px;
+}
+
+.title-div{
+  display: flex;
+  flex-direction:column;
+}
+
+.row-one{
+  display: flex;
+  flex-direction: row;
+}
+
+/* Add Recipe Styling Start */
