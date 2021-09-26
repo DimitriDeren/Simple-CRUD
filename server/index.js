@@ -1,6 +1,8 @@
-import app from "./server.js";
-import mongodb from "mongodb";
-import dotenv from "dotenv";
+import app from './server.js';
+import mongodb from 'mongodb';
+import dotenv from 'dotenv';
+
+import RecipesDAO from './data_access_model/RecipesDAO.js';
 
 // Load environment variables
 dotenv.config();
@@ -24,6 +26,8 @@ MongoClient.connect(
         process.exit(1);
     })
     .then(async client => {
+        //Connect to database
+        await RecipesDAO.injectDB(client);
         // Start web server
         app.listen(port, () => {
             console.log(`listening on port ${port}`);
