@@ -1,8 +1,5 @@
 /* Add Recipe Styling Start */
 
-p{
-  margin: 5px;
-}
 
 .form-body{
   border: 1px;
@@ -23,6 +20,7 @@ p{
   border-style: dashed;
   flex-wrap: wrap;
   background-color: white;
+  flex-direction: column;
 }
 
 .input{
