@@ -1,58 +1,56 @@
 /* Add Recipe Styling Start */
 
-
-.form-body{
-  border: 1px;
-  border-style: dashed;
-  display: flex;
-  justify-content: center;
-  padding: 10vh;
-  border: 1px;
-  border-style: dashed;
-  background-color:#fff2fb;
+.form-body {
+    border: 1px;
+    border-style: dashed;
+    display: flex;
+    justify-content: center;
+    padding: 10vh;
+    border: 1px;
+    border-style: dashed;
+    background-color: #fff2fb;
 }
 
-.form-fields{
-  display: flex;
-  justify-content: center;
-  padding:10;
-  border: 1px;
-  border-style: dashed;
-  flex-wrap: wrap;
-  background-color: white;
-  flex-direction: column;
+.form-fields {
+    display: flex;
+    justify-content: center;
+    border: 1px;
+    flex-wrap: wrap;
+    background-color: white;
+    flex-direction: column;
 }
 
-.input{
-  width:60vw;
-  height: 6vh;
-  border: 1px;
-  border-color: #b3b3b3;
-  background-color: #d9d8d7;
-  padding-left: 10px;
-  font-size: 16px;
-  margin:10px;
+.input {
+    width: 60vw;
+    height: 6vh;
+    border: 1px;
+    border-color: #b3b3b3;
+    background-color: #d9d8d7;
+    padding-left: 10px;
+    font-size: 16px;
+    margin: 10px;
 }
 
-.ingredient-input{
-  width:20vw;
-  height: 6vh;
-  border: 1px;
-  border-color: #b3b3b3;
-  background-color: #d9d8d7;
-  padding-left: 10px;
-  font-size: 16px;
-  margin:10px;
+.input-title {
+    margin: 10px;
+    margin-bottom: 0px;
 }
 
-.title-div{
-  display: flex;
-  flex-direction:column;
+.ingredient-input {
+    resize: vertical;
+    max-height: 200px;
+    min-height: 100px;
 }
 
-.row-one{
-  display: flex;
-  flex-direction: row;
+.title-div {
+    display: flex;
+    flex-direction: column;
 }
+
+.row-one {
+    display: flex;
+    flex-direction: row;
+}
+
 
 /* Add Recipe Styling Start */

@@ -1,23 +1,34 @@
 <!DOCTYPE html>
 
- <head>
-   <link rel="stylesheet" href="./styles/style.css">
- </head>
-  
- <body class="form-body">
-     <form class="form-fields">
-       <div class="title-div">
-         <p>Title*</p>
-         <input class="input title-input" type="text" placeholder="Baka Boofy" />
-       </div>
+<head>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
 
-       <div class="row-one">
-          <div>
-              <input class="ingredient-input" type="text"/>
-          </div>
-      </div>
+<body class="form-body">
+    <form class="form-fields">
 
-     </form>
- </body>
- 
- </HTML> 
+        <div class="title-div">
+            <p class="input-title">Title*</p>
+            <input class="input title-input" type="text" placeholder="Title" placeholder="Title" />
+        </div>
+
+        <div>
+            <input class="input directions-input " type="text " placeholder="Ingredients " />
+        </div>
+
+        <div>
+            <input class="input image-input " type="file" id="img" name="img" accept="image/ placeholder=" Image " />
+        </div>
+
+        <div>
+            <textarea cols="40 " rows="10 " class=" input ingredient-input " type="text " placeholder="Directions "></textarea>
+        </div>
+        
+      <button></button>
+    </form>
+
+</body>
+
+<script src="addRecipe.js"></script>
+
+</HTML>
