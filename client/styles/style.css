@@ -1,3 +1,4 @@
+/* Top Bar Navigation & Search Start */
 * {box-sizing: border-box;}
 
 body {
@@ -5,9 +6,15 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+
 .topnav {
   overflow: hidden;
   background-color: rgb(138, 48, 51);;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: row;
 }
 
 .topnav a {
@@ -73,6 +80,11 @@ body {
   }
 }
 
+.top-buttons{
+  flex-basis: 33.333333%;
+}
+/* Top Bar Navigation & Search End */
+
 /* Dashboard Screen Styling Start*/
 .home-view{
   display: flex;
@@ -85,10 +97,11 @@ body {
 
 .recipe-view{
   background-color: #EADEDA;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  overflow: scroll;
   
 }
 
