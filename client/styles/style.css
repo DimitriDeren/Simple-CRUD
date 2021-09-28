@@ -37,6 +37,7 @@ body {
   color: rgb(138, 48, 51);;
 }
 
+/* Search Styling
 .topnav .search-container {
   float: right;
 }
@@ -78,7 +79,7 @@ body {
   .topnav input[type=text] {
     border: 1px solid #ccc;  
   }
-}
+}*/
 
 .top-buttons{
   flex-basis: 33.333333%;
