@@ -1,10 +1,8 @@
 function saveForm() {
-  var arrInput = document.getElementsByTagName("input");
-
-  var title = document.querySelector('.title-input').value;
-  var ingredient = document.querySelector('.title-input').value;
-  var directions = document.querySelector('.title-input').value;
-  var image = document.querySelector('.image-input').value;
+  var title = document.querySelector('.title-input').value; //gets the title field value
+  var ingredient = document.querySelector('.title-input').value; //gets the ingredients field value
+  var directions = document.querySelector('.title-input').value; //gets the directions field value
+  var image = document.querySelector('.image-input').value; //gets the image field value
 
   console.log("Title: " + title);
   console.log("Ingredient: " + ingredient);
