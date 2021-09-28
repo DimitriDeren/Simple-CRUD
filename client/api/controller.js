@@ -14,5 +14,22 @@ async function getRequest(){
 }
 
 async function postRequest(recipeModel){
-    
+    let url = CONFIG.ACCESS_POINT;
+    let data = {
+      title: recipeModel.title,
+      ingredients: recipeModel.ingredients,
+      directions: recipeModel.directions,
+      image: recipeModel.image,
+    }
+    const otherParam={
+      headers:{
+        'Content-Type' : 'application/json',
+        'Accept' : 'application/json'
+      },
+      body:JSON.stringify(data),
+      method:"POST"
+    };
+
+    const response = await fetch(url, otherParam);
+    console.log(response);
 }
