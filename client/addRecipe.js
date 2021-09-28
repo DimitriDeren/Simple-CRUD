@@ -1,4 +1,6 @@
-function saveForm() {
+import Controller from "../api/controller.js"
+
+export function saveForm() {
   var arrInput = document.getElementsByTagName("input");
 
   var title = document.querySelector('.title-input').value;
@@ -10,4 +12,6 @@ function saveForm() {
   console.log("Ingredient: " + ingredient);
   console.log("Directions: " + directions);
   console.log("Image: " + image);
+
+  console.log(Controller.getRequest())
 }
