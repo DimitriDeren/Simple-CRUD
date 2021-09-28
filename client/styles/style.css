@@ -1,3 +1,124 @@
+/* Top Bar Navigation & Search Start */
+* {box-sizing: border-box;}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.topnav {
+  overflow: hidden;
+  background-color: rgb(138, 48, 51);;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: row;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: white;
+  color: rgb(138, 48, 51);;
+}
+
+.topnav a.active {
+  background-color: white;
+  color: rgb(138, 48, 51);;
+}
+
+/* Search Styling
+.topnav .search-container {
+  float: right;
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: rgb(138, 48, 51);
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;  
+  }
+}*/
+
+.top-buttons{
+  flex-basis: 33.333333%;
+}
+/* Top Bar Navigation & Search End */
+
+/* Dashboard Screen Styling Start*/
+.home-view{
+  display: flex;
+  flex-direction: column;
+}
+
+.search-bar{
+  height: 20vh;
+}
+
+.recipe-view{
+  background-color: #EADEDA;
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  overflow: scroll;
+  
+}
+
+.recipe-widget{
+  width: 250px;
+  height: 250px;
+  border-style: solid;
+  background-color: #998888;
+  border-width: 2px;
+  border-radius: 50px;
+  margin: 30px;
+  
+}
+
+
+/* Dashboard Screen Styling End */
 /* Add Recipe Styling Start */
 
 p{
