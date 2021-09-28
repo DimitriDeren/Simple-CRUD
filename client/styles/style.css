@@ -1,5 +1,4 @@
 /* Add Recipe Styling Start */
-
 p{
   font-family: Open Sans;
 }
@@ -60,4 +59,83 @@ p{
 }
 
 
-/* Add Recipe Styling Start */
+/* Add Recipe Styling End */
+
+/* Login and registration styling start */
+.header {
+    color: #8A3033;
+    font-family: Open Sans;
+}
+
+p {
+    color: #8A3033;
+    font-family: Open Sans;
+    margin-bottom: 8px;
+}
+
+label {
+    color: #8A3033;
+    font-family: Open Sans;
+}
+
+a:link {
+    color: #8A3033;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #801216a8;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #8A3033;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+input[type=text] {
+    font-family: Open Sans;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    border-radius: 6px;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    margin-bottom: 5px;
+}
+  
+input[type=text]:focus {
+    border: 3px solid #8A3033;
+}
+  
+input[type=submit] {
+    font-family: Open Sans;
+    background-color: #8A3033;
+    color: #EADEDA;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 5%;
+    margin-left: 38%;
+}
+  
+input[type=submit]:hover {
+    background-color: #801216a8;
+}
+  
+.container {
+    background-color: #EADEDA;
+    padding: 60px;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+/* Login and registration styling end */
