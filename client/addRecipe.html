@@ -8,12 +8,28 @@
 </head>
 
 
+<div class="home-view">
+
+<div class="topnav">
+
+    <a class="top-buttons" href="./dashboard.html">Home</a>
+    <a class="active top-buttons" href="./addRecipe.html">Add Recipe</a>
+    <a class="top-buttons" href="#login">Log In</a>
+<!-- 
+    <div class="search-container">
+      <form action="/action_page.php">
+        <input type="text" placeholder="Search" name="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+    </div> -->
+
+  </div>
+
 <!-- Form Body -->
 <body class="form-body">
     <form class="form-fields">
 
         <!-- Form Fields Start -->
-
         <!-- Title Field -->
         <div class="field-div title-div">
             <p class="input-title">Title*</p>
@@ -40,12 +56,14 @@
         
         <!-- Submit Button -->
         <button type="button" onclick="saveForm()"">Try it</button>
-
         <!-- Form Fields End -->
 
     </form>
 
 </body>
+
+
+</div>
 
 <script src="addRecipe.js" ></script>
 <script src="./api/controller.js" ></script>
