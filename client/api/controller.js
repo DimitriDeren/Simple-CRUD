@@ -1,7 +1,5 @@
-import config from "../config/config.js"
-
-export async function getRequest(){
-  let url = config.ACCESS_POINT;
+async function getRequest(){
+  let url = CONFIG.ACCESS_POINT;
   // url = url.concat(`&title=${queryParam}`);
 
   const response = await fetch(url);
@@ -10,6 +8,6 @@ export async function getRequest(){
   return data;
 }
 
-export async function postRequest(recipeModel){
+async function postRequest(recipeModel){
     
 }
