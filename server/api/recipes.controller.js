@@ -31,10 +31,14 @@ export default class RecipesController {
         try {
             const title = req.body.title;
             const ingredients = req.body.ingredients;
+            const directions = req.body.directions;
+            const image = req.body.image;
 
             const RecipeResponse = await RecipesDAO.addRecipe(
                 title,
                 ingredients,
+                directions,
+                image
             );
 
             res.json({ status: "success" });
