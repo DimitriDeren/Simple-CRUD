@@ -119,3 +119,66 @@ body {
 
 
 /* Dashboard Screen Styling End */
+/* Add Recipe Styling Start */
+
+p{
+  font-family: Open Sans;
+}
+
+.form-body {
+    display: flex;
+    justify-content: center;
+    padding: 10vh;
+    background-color: #FFEBEB;
+}
+
+.form-fields {
+    display: flex;
+    justify-content: center;
+    border: 1px;
+    flex-wrap: wrap;
+    background-color: white;
+    flex-direction: column;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.input {
+    width: 60vw;
+    height: 6vh;
+    border: 1px;
+    border-color: #b3b3b3;
+    background-color: #d9d8d7;
+    padding-left: 10px;
+    font-size: 16px;
+    margin: 10px;
+    margin-top: 0px;
+}
+
+.image-input{
+  padding-top: 10px;
+}
+
+.input-title {
+    margin: 10px;
+    margin-bottom: 0px;
+    color: crimson;
+}
+
+.directions-input {
+    resize: vertical;
+    max-height: 200px;
+    min-height: 100px;
+}
+
+.title-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.row-one {
+    display: flex;
+    flex-direction: row;
+}
+
+
+/* Add Recipe Styling Start */

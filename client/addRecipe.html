@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body class="form-body">
+    <form class="form-fields">
+
+        <div class="field-div title-div">
+            <p class="input-title">Title*</p>
+            <input class="input title-input" type="text" placeholder="Title" placeholder="Title" />
+        </div>
+
+        <div>
+            <p class="input-title">Ingredients*</p>
+            <input class="input ingredients-input" type="text" placeholder="Ingredients" />
+        </div>
+
+        <div>
+            <p class="input-title">Directions*</p>
+            <textarea cols="40 " rows="10" class="input directions-input" type="text " placeholder="Directions "></textarea>
+        </div>
+
+        <div>
+          <p class="input-title">Image</p>
+          <input class="input image-input" type="file" id="img" name="img" accept="image/ placeholder=" Image " />
+        </div>
+        
+        <button type="button" onclick="saveForm()">Try it</button>
+    </form>
+
+</body>
+
+<script src="addRecipe.js"></script>
+
+</HTML>
