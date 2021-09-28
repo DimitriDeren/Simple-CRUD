@@ -16,4 +16,10 @@ function saveForm() {
   postRequest(model).then((data) => {
     console.log(data);
   });
+
+  // Uncomment when wanting to do getRequest instead
+  // getRequest().then((data) => {
+  //   console.log(data);
+  // }); 
+
 }
