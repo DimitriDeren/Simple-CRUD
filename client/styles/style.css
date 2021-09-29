@@ -119,6 +119,7 @@ body {
 
 
 /* Dashboard Screen Styling End */
+
 /* Add Recipe Styling Start */
 p{
   font-family: Open Sans;
@@ -142,15 +143,15 @@ p{
 }
 
 .input {
-    width: 60vw;
-    height: 6vh;
-    border: 1px;
+    width: 60vw !important;
+    height: 6vh !important;
+    border: 1px !important;
     border-color: #b3b3b3;
     background-color: #d9d8d7;
-    padding-left: 10px;
-    font-size: 16px;
-    margin: 10px;
-    margin-top: 0px;
+    padding-left: 10px !important;
+    font-size: 16px !important;
+    margin: 10px !important;
+    margin-top: 0px !important;
 }
 
 .image-input{
@@ -178,40 +179,39 @@ p{
     display: flex;
     flex-direction: row;
 }
-
 /* Add Recipe Styling End */
 
 /* Login and registration styling start */
 .header {
-    color: #8A3033;
+    /* color: #8A3033; */
     font-family: Open Sans;
 }
 
 p {
-    color: #8A3033;
+    /* color: #8A3033; */
     font-family: Open Sans;
     margin-bottom: 8px;
 }
 
 label {
-    color: #8A3033;
+    /* color: #8A3033; */
     font-family: Open Sans;
 }
 
 a:link {
-    color: #8A3033;
+    /* color: #8A3033; */
     background-color: transparent;
     text-decoration: underline;
 }
 
 a:hover {
-    color: #801216a8;
+    /* color: #801216a8; */
     background-color: transparent;
     text-decoration: underline;
 }
 
 a:visited {
-    color: #8A3033;
+    /* color: #8A3033; */
     background-color: transparent;
     text-decoration: underline;
 }
