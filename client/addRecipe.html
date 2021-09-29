@@ -7,34 +7,67 @@
   <link rel="stylesheet" href="./styles/style.css">
 </head>
 
+
+<div class="home-view">
+
+<div class="topnav">
+
+    <a class="top-buttons" href="./dashboard.html">Home</a>
+    <a class="active top-buttons" href="./addRecipe.html">Add Recipe</a>
+    <a class="top-buttons" href="#login">Log In</a>
+<!-- 
+    <div class="search-container">
+      <form action="/action_page.php">
+        <input type="text" placeholder="Search" name="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+    </div> -->
+
+  </div>
+
+<!-- Form Body -->
 <body class="form-body">
     <form class="form-fields">
 
+        <!-- Form Fields Start -->
+        <!-- Title Field -->
         <div class="field-div title-div">
             <p class="input-title">Title*</p>
             <input class="input title-input" type="text" placeholder="Title" placeholder="Title" />
         </div>
 
+        <!-- Ingredients Field -->
         <div>
             <p class="input-title">Ingredients*</p>
             <input class="input ingredients-input" type="text" placeholder="Ingredients" />
         </div>
 
+        <!-- Directions Field -->
         <div>
             <p class="input-title">Directions*</p>
             <textarea cols="40 " rows="10" class="input directions-input" type="text " placeholder="Directions "></textarea>
         </div>
 
+        <!-- Image Field -->
         <div>
           <p class="input-title">Image</p>
-          <input class="input image-input" type="file" id="img" name="img" accept="image/ placeholder=" Image " />
+          <input class="input image-input" type="file" id="img" name="img" accept="image/*" placeholder= "Image" />
         </div>
         
-        <button type="button" onclick="saveForm()">Try it</button>
+        <!-- Submit Button -->
+        <button type="button" onclick="saveForm()"">Try it</button>
+        <!-- Form Fields End -->
+
     </form>
 
 </body>
 
-<script src="addRecipe.js"></script>
+
+</div>
+
+<script src="addRecipe.js" ></script>
+<script src="./api/controller.js" ></script>
+<script src="./config/config.js" ></script>
+<script src="./models/recipeModel.js"></script>
 
 </HTML>

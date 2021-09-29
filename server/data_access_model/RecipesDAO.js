@@ -60,11 +60,13 @@ export default class RecipesDAO {
     }
 
     // TODO: create addRecipe function
-    static async addRecipe(title, ingredients) {
+    static async addRecipe(title, ingredients, directions, image) {
         try {
             const recipeDoc = {
                 title: title,
                 ingredients: ingredients,
+                directions: directions,
+                image: image
             }
 
             return await recipes.insertOne(recipeDoc);

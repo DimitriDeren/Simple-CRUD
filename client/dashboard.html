@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 
- <head>
-   <link rel="stylesheet" href="style.css">
- </head>
- 
- <body>
-   <p>Nice</p>
- </body>
+  <head>
+    <link rel="stylesheet" href="./styles/style.css">
+  </head>
+  
+  <div class="home-view">
 
- </HTML> 
+    <div class="topnav">
+
+      <a class="active top-buttons" href="./dashboard.html">Home</a>
+      <a class="top-buttons" href="./addRecipe.html">Add Recipe</a>
+      <a class="top-buttons" href="#login">Log In</a>
+      <!-- 
+      <div class="search-container">
+        <form action="/action_page.php">
+          <input type="text" placeholder="Search" name="search">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div> -->
+
+    </div>
+
+    <div id = "recipe" class = "recipe-view">
+      
+      <button onclick="createWidget()">Try it</button>
+      
+    </div>
+
+  </div>
+
+  <script src="dashboard.js"></script>
+</HTML> 
