@@ -130,6 +130,7 @@ p{
     justify-content: center;
     padding: 10vh;
     background-color: #FFEBEB;
+    height: 100%;
 }
 
 .form-fields {
