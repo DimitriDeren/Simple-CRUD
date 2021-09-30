@@ -107,6 +107,7 @@ body {
 }
 
 .recipe-widget{
+  display: flex;
   width: 250px;
   height: 250px;
   border-style: solid;
@@ -114,9 +115,18 @@ body {
   border-width: 2px;
   border-radius: 50px;
   margin: 30px;
-  
+  flex-direction: row;
+  align-items: flex-end;
 }
 
+.recipe-title{
+    align-self: flex-end;
+    margin-left: 110px;
+}
+
+/* Checkbox Styling Start */
+
+/* Checkbox Styling End */
 
 /* Dashboard Screen Styling End */
 
@@ -144,15 +154,15 @@ p{
 }
 
 .input {
-    width: 60vw !important;
-    height: 6vh !important;
-    border: 1px !important;
+    width: 60vw;
+    height: 6vh;
+    border: 1px;
     border-color: #b3b3b3;
     background-color: #d9d8d7;
-    padding-left: 10px !important;
-    font-size: 16px !important;
-    margin: 10px !important;
-    margin-top: 0px !important;
+    padding-left: 10px;
+    font-size: 16px;
+    margin: 10px;
+    margin-top: 0px;
 }
 
 .image-input{
@@ -217,7 +227,7 @@ a:visited {
     text-decoration: underline;
 }
 
-input[type=text] {
+.login-field {
     font-family: Open Sans;
     width: 100%;
     padding: 12px 20px;
@@ -231,7 +241,7 @@ input[type=text] {
     margin-bottom: 5px;
 }
 
-input[type=password] {
+.login-field {
     font-family: Open Sans;
     width: 100%;
     padding: 12px 20px;

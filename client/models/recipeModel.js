@@ -1,4 +1,3 @@
-
 class RecipeModel {
   constructor(title, ingredients, directions, image){
     this.title = title;
