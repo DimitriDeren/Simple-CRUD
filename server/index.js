@@ -3,6 +3,7 @@ import mongodb from 'mongodb';
 import dotenv from 'dotenv';
 
 import RecipesDAO from './data_access_model/RecipesDAO.js';
+import AccountDAO from './data_access_model/AccountDAO.js';
 
 // Load environment variables
 dotenv.config();
@@ -28,6 +29,7 @@ MongoClient.connect(
     .then(async client => {
         //Connect to database
         await RecipesDAO.injectDB(client);
+        await AccountDAO.injectDB(client);
         // Start web server
         app.listen(port, () => {
             console.log(`listening on port ${port}`);
