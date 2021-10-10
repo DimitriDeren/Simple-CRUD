@@ -11,23 +11,27 @@
       <a class="active top-buttons" href="./dashboard.html">Home</a>
       <a class="top-buttons" href="./addRecipe.html">Add Recipe</a>
       <a class="top-buttons" href="./login.html">Log In</a>
-      <!-- 
-      <div class="search-container">
-        <form action="/action_page.php">
-          <input type="text" placeholder="Search" name="search">
-          <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-      </div> -->
 
     </div>
 
+
     <div id = "recipe" class = "recipe-view">
-      
-      <button onclick="createWidget()">Try it</button>
-      
+      <%= for (recipe in recipes) { %>
+        <div class="recipe-widget">
+          <p> <%= recipe.title %> </p>
+        </div>
+      <% } %>
     </div>
 
   </div>
 
   <script src="dashboard.js"></script>
 </HTML> 
+
+<!-- 
+<div class="search-container">
+  <form action="/action_page.php">
+    <input type="text" placeholder="Search" name="search">
+    <button type="submit"><i class="fa fa-search"></i></button>
+  </form>
+</div> -->
