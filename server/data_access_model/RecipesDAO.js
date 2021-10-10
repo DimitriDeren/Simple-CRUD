@@ -23,6 +23,11 @@ export default class RecipesDAO {
         }
     }
 
+    /**
+     * Send GET query to database
+     * @param {*} param0 - database query parameters
+     * @returns results list of Recipe objects
+     */
     static async getRecipes({
         filters = null,
         page = 0,
@@ -59,7 +64,14 @@ export default class RecipesDAO {
         }
     }
 
-    // TODO: create addRecipe function
+    /**
+     * Send POST query to database
+     * @param {*} title - title of Recipe object
+     * @param {*} ingredients - ingredients of Recipe object
+     * @param {*} directions - directions of Recipe object
+     * @param {*} image - image of Recipe object
+     * @returns response of database query
+     */
     static async addRecipe(title, ingredients, directions, image) {
         try {
             const recipeDoc = {

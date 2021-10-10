@@ -4,11 +4,12 @@ import RecipesController from './recipes.controller.js';
 
 const router = express.Router();
 
-// TODO: add POST request to route
+// TODO: add DELETE & UPDATE request to route
 router
     .route("/")
     .get(RecipesController.apiGetRecipes)
-    .post(RecipesController.apiPostRecipes);
+    .post(RecipesController.apiPostRecipes)
+    .delete(RecipesController.apiDeleteRecipes);
 
 
 export default router;

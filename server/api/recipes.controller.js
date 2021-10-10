@@ -2,6 +2,12 @@ import RecipesDAO from '../data_access_model/RecipesDAO.js';
 
 export default class RecipesController {
 
+    /**
+     * 
+     * @param {*} req 
+     * @param {*} res 
+     * @param {*} next 
+     */
     static async apiGetRecipes(req, res, next) {
         const recipesPerPage = req.query.recipesPerPage ? parseInt(req.query.recipesPerPage, 10) : 20;
         const page = req.query.page ? parseInt(req.query.page, 10) : 0;
@@ -27,6 +33,12 @@ export default class RecipesController {
         res.json(response)
     }
 
+    /**
+     * 
+     * @param {*} req 
+     * @param {*} res 
+     * @param {*} next 
+     */
     static async apiPostRecipes(req, res, next) {
         try {
             const title = req.body.title;
@@ -45,5 +57,15 @@ export default class RecipesController {
         } catch (e) {
             res.status(500).json({ error: e.message });
         }
+    }
+
+    /**
+     * 
+     * @param {*} req 
+     * @param {*} res 
+     * @param {*} next 
+     */
+    static async apiDeleteRecipes(req, res, next) {
+
     }
 }
