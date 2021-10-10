@@ -24,7 +24,7 @@ export default class AccountController {
             const userName = req.body.userName;
             const passHash = req.body.passHash;
 
-            const NewUserResponse = await RecipesDAO.addRecipe(
+            const NewUserResponse = await AccountDAO.addNewUser(
                 userName,
                 passHash,
             );

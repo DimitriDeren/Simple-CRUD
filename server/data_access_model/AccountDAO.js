@@ -61,7 +61,7 @@ export default class AccountDAO {
                 passHash: passHash,
             }
 
-            return await users.insertOne(newUser);
+            return await accounts.insertOne(newUser);
         } catch (e) {
             console.error(`Unable to create/add new user: ${e}`);
         }
