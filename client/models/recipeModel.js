@@ -1,9 +1,8 @@
 
 class RecipeModel {
-  constructor(title, ingredients, directions, image){
+  constructor(title, ingredients, directions){
     this.title = title;
     this.ingredients = ingredients;
     this.directions = directions;
-    this.image = image;
   }
 }

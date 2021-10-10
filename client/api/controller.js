@@ -33,7 +33,3 @@ async function postRequest(recipeModel){
     const response = await fetch(url, otherParam);
     console.log(response);
 }
-
-async function loginRequest() {
-  let url = 
-}
