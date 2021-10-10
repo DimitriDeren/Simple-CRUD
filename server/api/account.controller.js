@@ -36,7 +36,8 @@ export default class AccountController {
                 userName,
                 passHash,
             );
-
+            
+            //TODO: add condition to check if username already exists
             res.json({ status: "success" });
         } catch (e) {
             res.status(500).json({ error: e.message });

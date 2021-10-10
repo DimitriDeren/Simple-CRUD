@@ -2,7 +2,7 @@
 let accounts;
 
 /**
- * Recipes Data Access Model
+ * Accounts Data Access Model
  */
 export default class AccountDAO {
 
@@ -53,14 +53,13 @@ export default class AccountDAO {
         }
     }
 
-    // TODO: create addRecipe function
+    // TODO: create new user function
     static async addNewUser(userName, passHash) {
         try {
             const newUser = {
                 userName: userName,
                 passHash: passHash,
             }
-
             return await accounts.insertOne(newUser);
         } catch (e) {
             console.error(`Unable to create/add new user: ${e}`);
