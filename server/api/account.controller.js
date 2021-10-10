@@ -3,6 +3,7 @@ import AccountDAO from '../data_access_model/AccountDAO.js';
 export default class AccountController {
 
     static async apiGetLoginToken(req, res, next) {
+        let localToken = "";
 
         let filters = {};
         if (req.query.userName) {
@@ -14,8 +15,15 @@ export default class AccountController {
         });
 
         let response = {
-            token: loginToken,
+            Authenticated: false,
         };
+        if (loginToken.token[0].passHash == localToken) {
+            response = {
+                Authenticated: true,
+            };
+        }
+
+        
         res.json(response)
     }
 
@@ -28,7 +36,8 @@ export default class AccountController {
                 userName,
                 passHash,
             );
-
+            
+            //TODO: add condition to check if username already exists
             res.json({ status: "success" });
         } catch (e) {
             res.status(500).json({ error: e.message });

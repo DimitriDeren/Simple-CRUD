@@ -19,12 +19,11 @@ app.use('/client', ClientRoutes);
 
 // Setup recipe routes
 app.use("/api/v1/recipes", RecipeRoutes);
-app.use("*", (req, res) => res.status(404).json({ error: "not found" }))
 
 // Setup account routes
 app.use("/api/v1/accounts", AccountRoutes);
+
+// Fallback route
 app.use("*", (req, res) => res.status(404).json({ error: "not found" }))
-
-
 
 export default app;

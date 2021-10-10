@@ -10,5 +10,4 @@ router
     .get(RecipesController.apiGetRecipes)
     .post(RecipesController.apiPostRecipes);
 
-
 export default router;
