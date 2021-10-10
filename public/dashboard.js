@@ -9,7 +9,7 @@ function createWidget() {
   // parent.appendChild(img);
   parent.appendChild(recipeTitle);
 
-  recipeTitle.innerHTML = "testing";
+  recipeTitle.innerHTML = "<%=" + "testing" + "%>";
   // recipeImg.setAttribute("src", recipeModel.img);
 
   let main = document.getElementById("recipe");

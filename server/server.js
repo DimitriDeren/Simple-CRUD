@@ -6,6 +6,10 @@ import AccountRoutes from './api/account.route.js';
 
 const app = express();
 
+
+app.set('view engine', 'ejs');
+app.set('views', '../client');
+
 app.use(cors());
 app.use(express.json());
 
