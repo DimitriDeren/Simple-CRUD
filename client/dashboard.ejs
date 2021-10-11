@@ -16,9 +16,9 @@
 
 
     <div id = "recipe" class = "recipe-view">
-      <% for (recipe in recipes) { %>
+      <% for (var i=0; i<recipes.length; i++) { %>
         <div class="recipe-widget">
-          <p> <%= recipe.title %> </p>
+          <p> <%= recipes[i].title %> </p>
         </div>
       <% } %>
 

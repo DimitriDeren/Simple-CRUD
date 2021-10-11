@@ -12,10 +12,12 @@ router
     .get(async (req, res) => {
     const { recipesList, totalNumRecipes } = await RecipesDAO.getRecipes({
     });
+      //console.log(recipesList);
       res.render("dashboard", {
         recipes: recipesList
       })
     });
+   
 
 router
     .route("/add_recipe")
