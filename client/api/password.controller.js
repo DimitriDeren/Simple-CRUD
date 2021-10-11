@@ -2,12 +2,13 @@ window.addEventListener('load', bindEvents);
 
 /* adds even listener to button */
 function bindEvents() {
-    document.querySelector('#submit').addEventListener('click', submit);
+    document.querySelector('#loginSubmit').addEventListener('click', submit);
 }
 
 /* when log in form is submitted */
 function submit() {
     var password = document.getElementById('loginPwd').value;
+    console.log(password);
     hashPassword(password);
 }
 
