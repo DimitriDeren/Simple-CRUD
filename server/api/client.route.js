@@ -27,11 +27,11 @@ router
 router
     .route("/login_page")
     .get((req, res) => 
-        res.render("addRecipe", {}));
+        res.render("login", {}));
 
 router
     .route("/registration_page")
     .get((req, res) => 
-        res.render("addRecipe", {}));
+        res.render("registration", {}));
 
 export default router;

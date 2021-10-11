@@ -3,15 +3,15 @@
 
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../public/styles/style.css">
-    <script src="../public/password.js"></script>
-    <script src="./api/password.controller.js"></script>
+    <link rel="stylesheet" href="http://localhost:5000/styles/style.css">
+    <script src="http://localhost:5000/scripts/password.js"></script>
+    <script src="http://localhost:5000/scripts/api/password.controller.js"></script>
 </head>
 
 <div class="topnav">
-    <a class="top-buttons" href="./dashboard.html">Home</a>
-    <a class="top-buttons" href="./addRecipe.html">Add Recipe</a>
-    <a class="active top-buttons" href="./login.html">Log In</a>
+    <a class="top-buttons" href="/client">Home</a>
+    <a class="top-buttons" href="/client/add_recipe">Add Recipe</a>
+    <a class="active top-buttons" href="/client/login_page">Log In</a>
   </div>
 
 <div>
@@ -24,7 +24,7 @@
         <input class="login-field" type="checkbox" onclick="togglePasswordLogin()">Show Password
         <p>
             Not registered?
-            <a href="registration.html">Create an account here</a>
+            <a href="/client/registration_page">Create an account here</a>
         </p>
 
         <button id="loginSubmit" class="button loginButton">LOG IN</button>
