@@ -1,7 +1,7 @@
 import express from 'express';
 
-import ClientController from './client.controller.js';
-import RecipesDAO from '../data_access_model/RecipesDAO'
+// import ClientController from './client.controller.js';
+
 
 
 const router = express.Router();
@@ -9,7 +9,7 @@ const router = express.Router();
 
 router
     .route("/")
-    .get((req, res) => {
+    .get(async (req, res) => {
     const { recipesList, totalNumRecipes } = await RecipesDAO.getRecipes({
         filters,
         page,

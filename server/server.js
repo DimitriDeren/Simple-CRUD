@@ -7,6 +7,7 @@ import AccountRoutes from './api/account.route.js';
 import ClientRoutes from './api/client.route.js';
 
 const app = express();
+const __dirname = path.resolve();
 
 app.set('view engine', 'ejs');
 app.set('views', '../client');
