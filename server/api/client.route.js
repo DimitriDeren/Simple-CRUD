@@ -19,11 +19,17 @@ router
 
 router
     .route("/add_recipe")
-    .get();
+    .get((req, res) => 
+        res.render("addRecipe", {}));
 
 router
     .route("/login_page")
-    .get();
+    .get((req, res) => 
+        res.render("addRecipe", {}));
 
+router
+    .route("/registration_page")
+    .get((req, res) => 
+        res.render("addRecipe", {}));
 
 export default router;
