@@ -6,6 +6,8 @@
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../public/styles/style.css">
+    <script src="../public/password.js"></script>
+    <script src="./api/password.controller.js"></script>
 </head>
 
 <!-- Need to add top nav (from dashboard) for home access -->
@@ -16,7 +18,7 @@
     <a class="active top-buttons" href="./login.html">Log In</a>
   </div>
 
-<div class="form">
+<div>
     <div class="container">
         <div class="header">
             <h1>Log in</h1>
@@ -29,11 +31,8 @@
             <a href="registration.html">Create an account here</a>
         </p>
 
-        <input type="submit" value="LOG IN">
-        </form>
+        <button id="submit" class="button submitButton">LOG IN</button>
+
     </div>
 </div>
-
-<script src="../public/password.js"></script>
-
 </HTML>

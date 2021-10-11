@@ -1,13 +1,18 @@
-/* get login input after submission */
-function getLoginInput() {
-    console.log(document.getElementById('loginUser'));
-    console.log(document.getElementById('loginPwd'));
+window.addEventListener('load', bindEvents);
 
-    // const username = document.getElementById('loginUser');
-    // const password = document.getElementById('loginPwd');
+/* adds even listener to button */
+function bindEvents() {
+    document.querySelector('#submit').addEventListener('click', submit);
 }
 
-/* hash password field */
-function hashPassword() {
+/* when log in form is submitted */
+function submit() {
+    var password = document.getElementById('loginPwd').value;
+    hashPassword(password);
+}
 
+/* hash password input */
+function hashPassword(password) {
+    const hashedPassword = CryptoJS.SHA256(password);
+    console.log(hashedPassword);
 }
