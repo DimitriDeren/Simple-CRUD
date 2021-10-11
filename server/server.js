@@ -18,6 +18,7 @@ app.use(express.json());
 // Setup public route
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 // Setup home route
 app.use('/client', ClientRoutes);
 

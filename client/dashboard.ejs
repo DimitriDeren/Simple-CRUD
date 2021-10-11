@@ -16,6 +16,11 @@
 
 
     <div id = "recipe" class = "recipe-view">
+      <% for (recipe in recipes) { %>
+        <div class="recipe-widget">
+          <p> <%= recipe.title %> </p>
+        </div>
+      <% } %>
 
     </div>
 
