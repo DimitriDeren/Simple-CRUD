@@ -12,7 +12,7 @@ function submit() {
     hashPassword(password);
 }
 
-/* hash password input */
+/* hash password input - need to add crypto library */
 function hashPassword(password) {
     const hashedPassword = CryptoJS.SHA256(password);
     console.log(hashedPassword);
