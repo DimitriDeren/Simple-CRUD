@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 
   <head>
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="http://localhost:5000/styles/style.css">
   </head>
   
   <div class="home-view">
 
     <div class="topnav">
 
-      <a class="active top-buttons" href="./dashboard.html">Home</a>
-      <a class="top-buttons" href="./addRecipe.html">Add Recipe</a>
-      <a class="top-buttons" href="./login.html">Log In</a>
+      <a class="active top-buttons" href="/client">Home</a>
+      <a class="top-buttons" href="/client/add_recipe">Add Recipe</a>
+      <a class="top-buttons" href="/client/login_page">Log In</a>
 
     </div>
 
 
     <div id = "recipe" class = "recipe-view">
-      <%= for (recipe in recipes) { %>
+      <% for (var i=0; i<recipes.length; i++) { %>
         <div class="recipe-widget">
-          <p> <%= recipe.title %> </p>
+          <p> <%= recipes[i].title %> </p>
         </div>
       <% } %>
+
     </div>
 
   </div>
@@ -35,3 +36,4 @@
     <button type="submit"><i class="fa fa-search"></i></button>
   </form>
 </div> -->
+

@@ -1,12 +1,13 @@
 import express from 'express';
 import cors from 'cors';
+import path from 'path';
 
 import RecipeRoutes from './api/recipes.route.js';
 import AccountRoutes from './api/account.route.js';
 import ClientRoutes from './api/client.route.js';
 
 const app = express();
-
+const __dirname = path.resolve();
 
 app.set('view engine', 'ejs');
 app.set('views', '../client');
@@ -14,7 +15,11 @@ app.set('views', '../client');
 app.use(cors());
 app.use(express.json());
 
-//Setup home route
+// Setup public route
+app.use(express.static(path.join(__dirname, 'public')));
+
+
+// Setup home route
 app.use('/client', ClientRoutes);
 
 // Setup recipe routes

@@ -1,9 +1,11 @@
 import app from './server.js';
 import mongodb from 'mongodb';
 import dotenv from 'dotenv';
+import path from 'path';
 
 import RecipesDAO from './data_access_model/RecipesDAO.js';
 import AccountDAO from './data_access_model/AccountDAO.js';
+const __dirname = path.resolve();
 
 // Load environment variables
 dotenv.config();
@@ -33,6 +35,7 @@ MongoClient.connect(
         // Start web server
         app.listen(port, () => {
             console.log(`listening on port ${port}`);
+            console.log(__dirname);
         });
     });
 
