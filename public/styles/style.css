@@ -253,7 +253,7 @@ input[type=password]:focus {
     border: 3px solid #8A3033;
 }
   
-input[type=submit] {
+.button[type=submit] {
     font-family: Open Sans;
     background-color: #8A3033;
     color: #EADEDA;
@@ -265,7 +265,7 @@ input[type=submit] {
     margin-left: 38%;
 }
   
-input[type=submit]:hover {
+.button[type=submit]:hover {
     background-color: #801216a8;
 }
   
