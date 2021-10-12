@@ -26,7 +26,7 @@ async function postRequest(recipeModel){
         'Content-Type' : 'application/json',
         'Accept' : 'application/json'
       },
-      body:JSON.stringify(data),
+      body: JSON.stringify(data),
       method:"POST"
     };
 

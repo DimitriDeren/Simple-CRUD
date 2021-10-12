@@ -3,7 +3,7 @@ import AccountDAO from '../data_access_model/AccountDAO.js';
 export default class AccountController {
 
     static async apiGetLoginToken(req, res, next) {
-        let localToken = "";
+        let localToken = req.query.passHash;
 
         let filters = {};
         if (req.query.userName) {
@@ -12,19 +12,22 @@ export default class AccountController {
 
         const loginToken = await AccountDAO.getLoginToken({
             filters,
+            localToken
         });
 
-        let response = {
-            Authenticated: false,
-        };
-        if (loginToken.token[0].passHash == localToken) {
-            response = {
-                Authenticated: true,
-            };
-        }
+        console.log(loginToken);
+
+        // let response = {
+        //     Authenticated: false,
+        // };
+        // if (loginToken.token[0].passHash == localToken) {
+        //     response = {
+        //         Authenticated: true,
+        //     };
+        // }
 
         
-        res.json(response)
+        res.json(loginToken)
     }
 
     static async apiPostNewUser(req, res, next) {

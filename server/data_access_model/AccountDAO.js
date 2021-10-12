@@ -25,6 +25,7 @@ export default class AccountDAO {
 
     static async getLoginToken({
         filters = null,
+        localToken
     } = {}) {
         let query;
         if (filters) {
@@ -40,17 +41,45 @@ export default class AccountDAO {
         } catch (e) {
             console.error(`Unable to find command, ${e}`);
             return {
-                token: 0,
+                Authenticated: false
             }
         }
 
+        let user = [];
+
         try {
-            const token = await cursor.toArray();
-            return { token };
+            user = await cursor.toArray();
         } catch (e) {
             console.error(`Unable to convert cursor to token, ${e}`);
-            return { token: 0 };
+            return { 
+                Authenticated: false
+            };
         }
+
+        if (user.length > 0) {
+            if (user[0].passHash == localToken) {
+                return {
+                    Authenticated: true
+                }
+            } else {
+                return {
+                    Authenticated: false
+                }
+            }
+        } else {
+            return { 
+                Authenticated: false
+            };
+        }
+
+        // let response = {
+        //     Authenticated: false,
+        // };
+        // if (loginToken.token[0].passHash == localToken) {
+        //     response = {
+        //         Authenticated: true,
+        //     };
+        // }
     }
 
     // TODO: create new user function
