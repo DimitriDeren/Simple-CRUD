@@ -59,20 +59,22 @@ export default class RecipesDAO {
         }
     }
 
-    // TODO: create addRecipe function
-    static async addRecipe(title, ingredients, directions, image) {
+    static async addRecipe(title, ingredients, directions) {
         try {
             const recipeDoc = {
                 title: title,
                 ingredients: ingredients,
-                directions: directions,
-                image: image
+                directions: directions
             }
 
             return await recipes.insertOne(recipeDoc);
         } catch (e) {
             console.error(`Unable to post recipe: ${e}`);
         }
+    }
+
+    static async updateRecipe() {
+
     }
 
 }

@@ -27,23 +27,60 @@ export default class RecipesController {
         res.json(response)
     }
 
+    // TODO: add authentication
     static async apiPostRecipes(req, res, next) {
         try {
             const title = req.body.title;
             const ingredients = req.body.ingredients;
             const directions = req.body.directions;
-            const image = req.body.image;
 
             const RecipeResponse = await RecipesDAO.addRecipe(
                 title,
                 ingredients,
-                directions,
-                image
+                directions
             );
 
             res.json({ status: "success" });
         } catch (e) {
             res.status(500).json({ error: e.message });
+        }
+    }
+
+    // TODO: add authentication
+    static async apiUpdateRecipe(req, res, next) {
+        try {
+            const recipeId = req.body.recipe_id;
+            const title = req.body.title;
+            const ingredients = req.body.ingredients;
+            const directions = req.body.directions;
+
+            const RecipeResponse = await RecipesDAO.updateRecipe(
+                recipeId,
+                title,
+                ingredients,
+                directions
+            );
+
+            let { error } = RecipeResponse;
+            if (error) {
+                res.status(400).json({ error });
+            }
+
+            if (RecipeResponse.modifiedCount === 0) {
+                throw new Error(
+                    "Unable to update review - user may not be original poster"
+                )
+            }
+
+            res.json({ status: "success" });
+        } catch (e) {
+            res.status(500).json({ error: e.message });
+        }
+    }
+
+    static async apiDeleteRecipe(req, res, next) {
+        try {
+            
         }
     }
 }
