@@ -54,21 +54,21 @@ export default class RecipesController {
             const ingredients = req.body.ingredients;
             const directions = req.body.directions;
 
-            const RecipeResponse = await RecipesDAO.updateRecipe(
+            const UpdateResponse = await RecipesDAO.updateRecipe(
                 recipeId,
                 title,
                 ingredients,
                 directions
             );
 
-            let { error } = RecipeResponse;
+            let { error } = UpdateResponse;
             if (error) {
                 res.status(400).json({ error });
             }
 
-            if (RecipeResponse.modifiedCount === 0) {
+            if (UpdateResponse.modifiedCount === 0) {
                 throw new Error(
-                    "Unable to update review - user may not be original poster"
+                    "Unable to update review - cannot find recipe"
                 )
             }
 
@@ -78,9 +78,18 @@ export default class RecipesController {
         }
     }
 
+    // TODO: add authentication
     static async apiDeleteRecipe(req, res, next) {
         try {
-            
+            const recipeId = req.query.id;
+
+            const DeleteResponse = await RecipesDAO.deleteRecipe(
+                recipeId
+            );
+
+            res.json({ status: "success" });
+        } catch (e) {
+            res.status(500).json({ error: e.message });
         }
     }
 }

@@ -8,6 +8,7 @@ router
     .route("/")
     .get(RecipesController.apiGetRecipes)
     .post(RecipesController.apiPostRecipes)
-    .put(RecipesController.apiUpdateRecipe);
+    .put(RecipesController.apiUpdateRecipe)
+    .delete(RecipesController.apiDeleteRecipe);
 
 export default router;
