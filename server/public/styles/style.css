@@ -83,8 +83,10 @@ body {
     border-style: solid;
     background-color: #998888;
     border-width: 2px;
-    /* border-radius: 50px; */
+    border-radius: 5px;
+    border-color:rgba(0, 0, 0, 0.19);
     margin: 10px;
+    color: white;
 }
 
 .recipe-title{
