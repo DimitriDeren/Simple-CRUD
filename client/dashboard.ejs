@@ -2,6 +2,7 @@
 
   <head>
     <link rel="stylesheet" href="http://localhost:5000/styles/style.css">
+    <script src="dashboard.js"></script>
   </head>
   
   <div class="home-view">
@@ -17,16 +18,14 @@
 
     <div id = "recipe" class = "recipe-view">
       <% for (var i=0; i<recipes.length; i++) { %>
-        <div class="recipe-widget">
-          <p> <%= recipes[i].title %> </p>
+        <div class="recipe-widget" id="<%=recipes[i].id%>" onclick="location.href='/client/update_page';" style="cursor: pointer;">
+          <p> <%=recipes[i].title%> </p>
         </div>
       <% } %>
-
     </div>
 
   </div>
 
-  <script src="dashboard.js"></script>
 </HTML> 
 
 <!-- 
