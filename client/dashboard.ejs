@@ -11,6 +11,7 @@
       <a class="active top-buttons" href="/client">Home</a>
       <a class="top-buttons" href="/client/add_recipe">Add Recipe</a>
       <a class="top-buttons" href="/client/login_page">Log In</a>
+      <script src="http://localhost:5000/scripts/dashboard.js"></script>
 
     </div>
 
@@ -18,14 +19,14 @@
     <div id = "recipe" class = "recipe-view">
       <div class="list-view">
         <% for (var i=0; i<recipes.length; i++) { %>
-          <div class="recipe-widget">
+          <div class="recipe-widget" onclick="toggleDisplay()">
             <p class="recipe-title"> <%= recipes[i].title %> </p>
           </div>
         <% } %>
       </div>
 
       <div class="recipe-details">
-        <div style="display:none;">
+        <div id="recipe-details-id" style="display:none;">
           <h1>Testing</h1>
           <div class="ingredients-list">
               <p>Testing</p>
@@ -41,7 +42,6 @@
 
   </div>
 
-  <script src="dashboard.js"></script>
 </HTML> 
 
 <!-- 

@@ -16,3 +16,15 @@ function createWidget() {
   main.appendChild(parent);
 
 }
+
+function testLog(){
+  console.log("works");
+}
+
+function toggleDisplay(){
+  var x = document.getElementById("recipe-details-id");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } 
+
+}
