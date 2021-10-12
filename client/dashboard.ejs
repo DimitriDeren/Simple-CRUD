@@ -16,12 +16,27 @@
 
 
     <div id = "recipe" class = "recipe-view">
-      <% for (var i=0; i<recipes.length; i++) { %>
-        <div class="recipe-widget">
-          <p> <%= recipes[i].title %> </p>
-        </div>
-      <% } %>
+      <div class="list-view">
+        <% for (var i=0; i<recipes.length; i++) { %>
+          <div class="recipe-widget">
+            <p class="recipe-title"> <%= recipes[i].title %> </p>
+          </div>
+        <% } %>
+      </div>
 
+      <div class="recipe-details">
+        <div style="display:none;">
+          <h1>Testing</h1>
+          <div class="ingredients-list">
+              <p>Testing</p>
+          </div>
+          <div class="directions">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tristique metus. Cras magna tortor, fermentum at arcu ut, ornare rhoncus diam. Quisque tempor quam a mollis aliquet. Vivamus efficitur lorem nec nibh semper bibendum. Maecenas vulputate a urna sed ornare. Sed eros orci, malesuada vel tellus non, euismod sodales neque. Sed commodo faucibus nunc id lacinia. Duis tempor sit amet enim a vulputate. Sed sagittis leo ut neque hendrerit bibendum. Sed efficitur, magna in fringilla dictum, velit diam laoreet velit, vitae consequat quam purus fermentum massa. Pellentesque ultricies facilisis velit, porttitor efficitur odio ornare et.
+  
+              </p>
+          </div>
+        </div>
+      </div>
     </div>
 
   </div>
