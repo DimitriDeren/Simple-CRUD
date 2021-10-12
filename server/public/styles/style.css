@@ -75,18 +75,21 @@ body {
   border-right: 1px solid black;
   overflow: scroll;
   background-color: #eadedac4;
+
 }
 
 .recipe-widget{
     /* width: 250px; */
     /* height: 250px; */
+    display: flex;
     border-style: solid;
     background-color: #998888;
     border-width: 2px;
     border-radius: 5px;
     border-color:rgba(0, 0, 0, 0.19);
     margin: 10px;
-    color: white;
+    color: white;  
+    justify-content: center;
 }
 
 .recipe-title{
