@@ -61,12 +61,6 @@ function updateRecipe(element) {
   
   
   let model = new RecipeModel(title, ingredients, directions, element.id);
-
-  // console.log("Title: " + title);
-  // console.log("Ingredient: " + ingredients);
-  // console.log("Directions: " + directions);
-  // console.log("ID: " + element.id);
-  // console.log(model);
-
+  console.log(model);
   updateRequest(model);
 }

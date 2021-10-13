@@ -53,6 +53,9 @@ async function updateRequest(recipeModel){
     ingredients: recipeModel.ingredients,
     directions: recipeModel.directions,
   }
+
+  console.log(data);
+
   const otherParam={
     body:JSON.stringify(data),
     method:"PUT"
