@@ -18,13 +18,6 @@
 
 
     <div id = "recipe" class = "recipe-view">
-<<<<<<< HEAD
-      <% for (var i=0; i<recipes.length; i++) { %>
-        <div class="recipe-widget" id="<%=recipes[i].id%>" onclick="location.href='/client/update_page';" style="cursor: pointer;">
-          <p> <%=recipes[i].title%> </p>
-        </div>
-      <% } %>
-=======
       <div class="list-view">
         <% for (var i=0; i<recipes.length; i++) { %>
           <div class="recipe-widget" onclick="toggleDisplay()">
@@ -46,7 +39,6 @@
           </div>
         </div>
       </div>
->>>>>>> main
     </div>
 
   </div>
