@@ -55,18 +55,18 @@ function deleteRecipe(element){
 
 
 function updateRecipe(element) {
-  var title = document.querySelector('.title-dashboard').value; //gets the title field value
+  var title = document.querySelector('.title-dashboard').innerText; //gets the title field value
   var ingredients = document.querySelector('.ingredients-dashboard').value; //gets the ingredients field value
   var directions = document.querySelector('.directions-dashboard').value; //gets the directions field value
   
   
   let model = new RecipeModel(title, ingredients, directions, element.id);
 
-  console.log("Title: " + title);
-  console.log("Ingredient: " + ingredients);
-  console.log("Directions: " + directions);
-  console.log("ID: " + element.id);
-  console.log(model);
+  // console.log("Title: " + title);
+  // console.log("Ingredient: " + ingredients);
+  // console.log("Directions: " + directions);
+  // console.log("ID: " + element.id);
+  // console.log(model);
 
   updateRequest(model);
 }
