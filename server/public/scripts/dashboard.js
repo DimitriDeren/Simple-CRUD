@@ -21,10 +21,26 @@ function testLog(){
   console.log("works");
 }
 
-function toggleDisplay(){
+function toggleDisplay(element){
   var x = document.getElementById("recipe-details-id");
   if (x.style.display === "none") {
     x.style.display = "block";
   } 
+  console.log(element.id);
+}
 
+
+function updateForm() {
+  var title = document.querySelector('.title-dashboard').value; //gets the title field value
+  var ingredients = document.querySelector('.ingredients-dashboard').value; //gets the ingredients field value
+  var directions = document.querySelector('.directions-dashboard').value; //gets the directions field value
+  
+
+  let model = new RecipeModel(title, ingredients, directions);
+
+  console.log("Title: " + title);
+  console.log("Ingredient: " + ingredients);
+  console.log("Directions: " + directions);
+
+  console.log(model);
 }

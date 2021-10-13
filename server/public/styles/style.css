@@ -48,6 +48,10 @@ body{
   overflow: hidden;
 }
 
+.update-button{
+  flex-grow: 1;
+}
+
 .home-view {
   display: flex;
   flex-direction: column;

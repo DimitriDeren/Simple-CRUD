@@ -19,7 +19,6 @@ async function postRequest(recipeModel){
       title: recipeModel.title,
       ingredients: recipeModel.ingredients,
       directions: recipeModel.directions,
-      image: recipeModel.image,
     }
     const otherParam={
       headers:{
@@ -32,4 +31,24 @@ async function postRequest(recipeModel){
 
     const response = await fetch(url, otherParam);
     console.log(response);
+}
+
+async function updateRequest(recipeModel){
+  let url = CONFIG.ACCESS_POINT;
+  let data = {
+    title: recipeModel.title,
+    ingredients: recipeModel.ingredients,
+    directions: recipeModel.directions,
+  }
+  const otherParam={
+    headers:{
+      'Content-Type' : 'application/json',
+      'Accept' : 'application/json'
+    },
+    body:JSON.stringify(data),
+    method:"PUT"
+  };
+
+  const response = await fetch(url, otherParam);
+  console.log(response);
 }
