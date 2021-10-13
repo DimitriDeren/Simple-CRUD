@@ -63,6 +63,26 @@ export default class RecipesDAO {
         }
     }
 
+    static async getRecipeById(id) {
+        let query = { _id: ObjectId(id) };
+
+        let cursor;
+        try {
+            cursor = await recipes.find(query);
+        } catch (e) {
+            console.error(`Unable to find command, ${e}`);
+            throw e;
+        }
+
+        try {
+            const recipe = await cursor.toArray();
+            return { recipe };
+        } catch (e) {
+            console.error(`Unable to convert cursor to array, ${e}`);
+            throw e;
+        }
+    }
+
     static async addRecipe(title, ingredients, directions) {
         try {
             const recipeDoc = {
@@ -84,11 +104,11 @@ export default class RecipesDAO {
                 { _id: ObjectId(recipeId) },
                 {
                     $set:
-                        {
-                            title: title,
-                            ingredients: ingredients,
-                            directions: directions
-                        }
+                    {
+                        title: title,
+                        ingredients: ingredients,
+                        directions: directions
+                    }
                 }
             );
 
