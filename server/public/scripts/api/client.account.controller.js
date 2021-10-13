@@ -18,8 +18,8 @@ function submitLogin() {
 }
 
 function submitReg() {
-    let userName = document.getElementById('loginUser').value;
-    let password = document.getElementById('loginPwd').value;
+    let userName = document.getElementById('registerUser').value;
+    let password = document.getElementById('registerPwd').value;
 
     registrationCall(userName, password);
 }
@@ -38,6 +38,8 @@ function registrationCall(userName, password) {
     console.log("username: " + userName);
     console.log("password: " + password);
     console.log("--------------------------");
+    postNewRegistration(userName, password);
+    
 }
 
 //API CALLS TO ACCOUNTS
@@ -63,21 +65,21 @@ async function getAuthenticationRequest(userName, password){
     return authentication;
   }
   
-  async function postRequest(accountModel){
+  async function postNewRegistration(userName, password){
       let url = CONFIG.ACCOUNTS_ACCESS_POINT;
       let data = {
-        userName: accountModel.userName,
-        passHash: accountModel.passHash,
+        userName: userName,
+        passHash: password,
       }
-      const otherParam={
-        headers:{
-          'Content-Type' : 'application/json',
-          'Accept' : 'application/json'
-        },
-        body:JSON.stringify(data),
-        method:"POST"
-      };
   
-      const response = await fetch(url, otherParam);
-      console.log(response);
+      const response = await fetch(url, {
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body:JSON.stringify(data),
+          method:"POST"
+      });
+      
+      console.log(response.status);
+      //return response.status;
   }
