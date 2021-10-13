@@ -11,4 +11,8 @@ router
     .put(RecipesController.apiUpdateRecipe)
     .delete(RecipesController.apiDeleteRecipe);
 
+router
+    .route("/id/:id")
+    .get(RecipesController.apiGetRecipeById);
+
 export default router;
