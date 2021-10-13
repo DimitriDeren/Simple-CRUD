@@ -33,6 +33,16 @@ async function postRequest(recipeModel){
     console.log(response);
 }
 
+async function deleteRequest(recipeID){
+  let url = CONFIG_DELETE.ACCESS_POINT;
+  url = url.concat("?id=" + recipeID);
+
+  const otherParam={
+    method:"DELETE"
+  };
+
+  const response = await fetch(url, otherParam);
+}
 
 //NOT FINISHED
 async function updateRequest(recipeModel){

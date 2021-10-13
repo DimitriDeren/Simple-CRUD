@@ -24,6 +24,10 @@ function toggleDisplay(){
   } 
 }
 
+function removeDisplay(element){
+  element.style.display = "none";
+}
+
 function getRecipe(element){
   getRequest(element.id).then((data) => {
     let recipe = data.recipe[0];
@@ -39,8 +43,10 @@ function getRecipe(element){
       directions.innerHTML = recipe.directions.replace(/\r?\n/g, '\n');
     }
   }); 
+}
 
-
+function deleteRecipe(element){
+  deleteRequest(element.id);
 }
 
 
