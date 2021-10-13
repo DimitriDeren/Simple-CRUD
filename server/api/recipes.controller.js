@@ -27,18 +27,64 @@ export default class RecipesController {
         res.json(response)
     }
 
+    // TODO: add authentication
     static async apiPostRecipes(req, res, next) {
         try {
             const title = req.body.title;
             const ingredients = req.body.ingredients;
             const directions = req.body.directions;
-            const image = req.body.image;
 
             const RecipeResponse = await RecipesDAO.addRecipe(
                 title,
                 ingredients,
-                directions,
-                image
+                directions
+            );
+
+            res.json({ status: "success" });
+        } catch (e) {
+            res.status(500).json({ error: e.message });
+        }
+    }
+
+    // TODO: add authentication
+    static async apiUpdateRecipe(req, res, next) {
+        try {
+            const recipeId = req.body.recipe_id;
+            const title = req.body.title;
+            const ingredients = req.body.ingredients;
+            const directions = req.body.directions;
+
+            const UpdateResponse = await RecipesDAO.updateRecipe(
+                recipeId,
+                title,
+                ingredients,
+                directions
+            );
+
+            let { error } = UpdateResponse;
+            if (error) {
+                res.status(400).json({ error });
+            }
+
+            if (UpdateResponse.modifiedCount === 0) {
+                throw new Error(
+                    "Unable to update review - cannot find recipe"
+                )
+            }
+
+            res.json({ status: "success" });
+        } catch (e) {
+            res.status(500).json({ error: e.message });
+        }
+    }
+
+    // TODO: add authentication
+    static async apiDeleteRecipe(req, res, next) {
+        try {
+            const recipeId = req.query.id;
+
+            const DeleteResponse = await RecipesDAO.deleteRecipe(
+                recipeId
             );
 
             res.json({ status: "success" });

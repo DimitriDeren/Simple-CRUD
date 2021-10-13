@@ -18,8 +18,7 @@ app.use(express.json());
 // Setup public route
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-// Setup home route
+// Setup client route
 app.use('/client', ClientRoutes);
 
 // Setup recipe routes

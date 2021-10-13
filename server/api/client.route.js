@@ -34,4 +34,9 @@ router
     .get((req, res) => 
         res.render("registration", {}));
 
+        router
+    .route("/update_page")
+    .get((req, res) => 
+        res.render("updateRecipe", {}));
+
 export default router;
