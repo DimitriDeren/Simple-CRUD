@@ -44,19 +44,16 @@ async function deleteRequest(recipeID){
   const response = await fetch(url, otherParam);
 }
 
-//NOT FINISHED
+
 async function updateRequest(recipeModel){
-  let url = CONFIG.ACCESS_POINT;
+  let url = CONFIG_UPDATE.ACCESS_POINT;
   let data = {
+    recipe_id: recipeModel.recipe_id,
     title: recipeModel.title,
     ingredients: recipeModel.ingredients,
     directions: recipeModel.directions,
   }
   const otherParam={
-    headers:{
-      'Content-Type' : 'application/json',
-      'Accept' : 'application/json'
-    },
     body:JSON.stringify(data),
     method:"PUT"
   };

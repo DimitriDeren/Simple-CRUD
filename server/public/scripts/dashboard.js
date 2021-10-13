@@ -34,6 +34,10 @@ function getRecipe(element){
     var title = document.querySelector('.title-dashboard'); //gets the title field value
     var ingredients = document.querySelector('.ingredients-dashboard'); //gets the ingredients field value
     var directions = document.querySelector('.directions-dashboard'); //gets the directions field value
+    var div = document.querySelector('.recipe-details');
+
+    div.id=element.id;
+    console.log(div.id);
     
     title.innerText = recipe.title;
     ingredients.innerText = recipe.ingredients;
@@ -50,17 +54,19 @@ function deleteRecipe(element){
 }
 
 
-function updateForm() {
+function updateRecipe(element) {
   var title = document.querySelector('.title-dashboard').value; //gets the title field value
   var ingredients = document.querySelector('.ingredients-dashboard').value; //gets the ingredients field value
   var directions = document.querySelector('.directions-dashboard').value; //gets the directions field value
   
-
-  let model = new RecipeModel(title, ingredients, directions);
+  
+  let model = new RecipeModel(title, ingredients, directions, element.id);
 
   console.log("Title: " + title);
   console.log("Ingredient: " + ingredients);
   console.log("Directions: " + directions);
-
+  console.log("ID: " + element.id);
   console.log(model);
+
+  updateRequest(model);
 }

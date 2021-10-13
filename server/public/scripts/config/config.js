@@ -12,3 +12,8 @@ const CONFIG_GET = {
 const CONFIG_DELETE = {
   ACCESS_POINT : "http://localhost:5000/api/v1/recipes/",
 }
+
+
+const CONFIG_UPDATE = {
+  ACCESS_POINT : "http://localhost:5000/api/v1/recipes/",
+}

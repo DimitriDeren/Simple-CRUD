@@ -50,6 +50,7 @@ body{
 
 .update-button{
   flex-grow: 1;
+  float:right;
 }
 
 .home-view {
