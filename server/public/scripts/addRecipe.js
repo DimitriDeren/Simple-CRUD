@@ -16,8 +16,5 @@ function saveForm() {
     console.log(data);
   });
 
-  // Uncomment when wanting to do getRequest instead
-  // getRequest().then((data) => {
-  //   console.log(data);
-  // }); 
+
 }

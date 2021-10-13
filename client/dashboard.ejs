@@ -23,7 +23,7 @@
     <div id = "recipe" class = "recipe-view">
       <div class="list-view">
         <% for (var i=0; i<recipes.length; i++) { %>
-          <div class="recipe-widget" id=<%=recipes[i]._id%> onclick="toggleDisplay(this)">
+          <div class="recipe-widget" id=<%=recipes[i]._id%> onclick="toggleDisplay(); getRecipe(this);">
             <p class="recipe-title"> <%= recipes[i].title %> </p>
           </div>
         <% } %>
@@ -31,12 +31,12 @@
 
       <div class="recipe-details">
         <div id="recipe-details-id" style="display:none;">
-          <input class="title-dashboard" value="Title"></input>
+          <h1 class="title-dashboard"></h1>
           <div class="ingredients-list">
-              <textarea class="ingredients-dashboard auth-user-input">Ingredients</textarea>
+              <textarea class="ingredients-dashboard auth-user-input"></textarea>
           </div>
           <div class="directions">
-              <textarea class="directions-dashboard auth-user-input">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tristique metus. Cras magna tortor, fermentum at arcu ut, ornare rhoncus diam. Quisque tempor quam a mollis aliquet. Vivamus efficitur lorem nec nibh semper bibendum. Maecenas vulputate a urna sed ornare. Sed eros orci, malesuada vel tellus non, euismod sodales neque. Sed commodo faucibus nunc id lacinia. Duis tempor sit amet enim a vulputate. Sed sagittis leo ut neque hendrerit bibendum. Sed efficitur, magna in fringilla dictum, velit diam laoreet velit, vitae consequat quam purus fermentum massa. Pellentesque ultricies facilisis velit, porttitor efficitur odio ornare et. 
+              <textarea class="directions-dashboard auth-user-input">
               </textarea>
           </div>
 
