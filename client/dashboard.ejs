@@ -2,7 +2,10 @@
 
   <head>
     <link rel="stylesheet" href="http://localhost:5000/styles/style.css">
-    <script src="dashboard.js"></script>
+    <script src="http://localhost:5000/scripts/dashboard.js"></script>
+    <script src="http://localhost:5000/scripts/api/controller.js" ></script>    
+    <script src="http://localhost:5000/scripts/config/config.js" ></script>
+    <script src="http://localhost:5000/scripts/models/recipeModel.js"></script>
   </head>
   
   <div class="home-view">
@@ -20,7 +23,7 @@
     <div id = "recipe" class = "recipe-view">
       <div class="list-view">
         <% for (var i=0; i<recipes.length; i++) { %>
-          <div class="recipe-widget" onclick="toggleDisplay()">
+          <div class="recipe-widget" id=<%=recipes[i]._id%> onclick="toggleDisplay(); getRecipe(this);">
             <p class="recipe-title"> <%= recipes[i].title %> </p>
           </div>
         <% } %>
@@ -28,15 +31,16 @@
 
       <div class="recipe-details">
         <div id="recipe-details-id" style="display:none;">
-          <h1>Testing</h1>
+          <h1 class="title-dashboard"></h1>
           <div class="ingredients-list">
-              <p>Testing</p>
+              <textarea class="ingredients-dashboard auth-user-input"></textarea>
           </div>
           <div class="directions">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tristique metus. Cras magna tortor, fermentum at arcu ut, ornare rhoncus diam. Quisque tempor quam a mollis aliquet. Vivamus efficitur lorem nec nibh semper bibendum. Maecenas vulputate a urna sed ornare. Sed eros orci, malesuada vel tellus non, euismod sodales neque. Sed commodo faucibus nunc id lacinia. Duis tempor sit amet enim a vulputate. Sed sagittis leo ut neque hendrerit bibendum. Sed efficitur, magna in fringilla dictum, velit diam laoreet velit, vitae consequat quam purus fermentum massa. Pellentesque ultricies facilisis velit, porttitor efficitur odio ornare et.
-  
-              </p>
+              <textarea class="directions-dashboard auth-user-input">
+              </textarea>
           </div>
+
+          <button class="button-secondary pure-button update-button" onclick="updateForm()">Update</button>
         </div>
       </div>
     </div>
@@ -44,12 +48,4 @@
   </div>
 
 </HTML> 
-
-<!-- 
-<div class="search-container">
-  <form action="/action_page.php">
-    <input type="text" placeholder="Search" name="search">
-    <button type="submit"><i class="fa fa-search"></i></button>
-  </form>
-</div> -->
 

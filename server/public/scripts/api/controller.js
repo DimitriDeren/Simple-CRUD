@@ -3,9 +3,9 @@
  * getRequest to MongoDB Database
  * TODO: implement title query, add parameter to take in title from the form
  */
-async function getRequest(){
-  let url = CONFIG.ACCESS_POINT; //check config.js
-  // url = url.concat(`&title=${queryParam}`);
+async function getRequest(recipeID){
+  let url = CONFIG_GET.ACCESS_POINT;
+  url = url.concat(recipeID);
 
   const response = await fetch(url);
   const data = await response.json();
@@ -19,7 +19,6 @@ async function postRequest(recipeModel){
       title: recipeModel.title,
       ingredients: recipeModel.ingredients,
       directions: recipeModel.directions,
-      image: recipeModel.image,
     }
     const otherParam={
       headers:{
@@ -32,4 +31,26 @@ async function postRequest(recipeModel){
 
     const response = await fetch(url, otherParam);
     console.log(response);
+}
+
+
+//NOT FINISHED
+async function updateRequest(recipeModel){
+  let url = CONFIG.ACCESS_POINT;
+  let data = {
+    title: recipeModel.title,
+    ingredients: recipeModel.ingredients,
+    directions: recipeModel.directions,
+  }
+  const otherParam={
+    headers:{
+      'Content-Type' : 'application/json',
+      'Accept' : 'application/json'
+    },
+    body:JSON.stringify(data),
+    method:"PUT"
+  };
+
+  const response = await fetch(url, otherParam);
+  console.log(response);
 }
