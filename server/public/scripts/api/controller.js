@@ -33,15 +33,28 @@ async function postRequest(recipeModel){
     console.log(response);
 }
 
+async function deleteRequest(recipeID){
+  let url = CONFIG_DELETE.ACCESS_POINT;
+  url = url.concat("?id=" + recipeID);
 
-//NOT FINISHED
+  const otherParam={
+    method:"DELETE"
+  };
+
+  const response = await fetch(url, otherParam);
+}
+
+
 async function updateRequest(recipeModel){
-  let url = CONFIG.ACCESS_POINT;
+  let url = CONFIG_UPDATE.ACCESS_POINT;
   let data = {
+    recipe_id: recipeModel.recipe_id,
     title: recipeModel.title,
     ingredients: recipeModel.ingredients,
     directions: recipeModel.directions,
   }
+
+
   const otherParam={
     headers:{
       'Content-Type' : 'application/json',
@@ -50,6 +63,8 @@ async function updateRequest(recipeModel){
     body:JSON.stringify(data),
     method:"PUT"
   };
+
+  console.log(otherParam);
 
   const response = await fetch(url, otherParam);
   console.log(response);

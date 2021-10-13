@@ -50,6 +50,7 @@ body{
 
 .update-button{
   flex-grow: 1;
+  float:right;
 }
 
 .home-view {
@@ -97,7 +98,19 @@ body{
   border-color: rgba(0, 0, 0, 0.19);
   margin: 10px;
   color: white;
-  justify-content: center;
+  justify-content: space-between;
+}
+
+.trash-icon{
+  margin-left: 10px;
+  cursor: pointer;
+  align-self: center;
+}
+
+.right-icon{
+  margin-right: 10px;
+  cursor: pointer;
+  align-self: center;
 }
 
 .recipe-title {
