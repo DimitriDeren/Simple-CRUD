@@ -54,12 +54,17 @@ async function updateRequest(recipeModel){
     directions: recipeModel.directions,
   }
 
-  console.log(data);
 
   const otherParam={
+    headers:{
+      'Content-Type' : 'application/json',
+      'Accept' : 'application/json'
+    },
     body:JSON.stringify(data),
     method:"PUT"
   };
+
+  console.log(otherParam);
 
   const response = await fetch(url, otherParam);
   console.log(response);
