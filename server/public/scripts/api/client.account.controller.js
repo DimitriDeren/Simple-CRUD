@@ -1,14 +1,3 @@
-// import sha256 from 'crypto-js/sha256';
-
-// import sha256 from 'crypto-js';
-
-// window.addEventListener('load', bindEvents);
-
-// /* adds even listener to button */
-// function bindEvents() {
-//     document.querySelector('#loginSubmit').addEventListener('click', submit);
-// }
-
 /* when log in form is submitted */
 function submitLogin() {
     let userName = document.getElementById('loginUser').value;
@@ -39,19 +28,19 @@ function registrationCall(userName, password) {
     console.log("password: " + password);
     console.log("--------------------------");
     postNewRegistration(userName, password);
-    
+
 }
 
 //API CALLS TO ACCOUNTS
 
-async function getAuthenticationRequest(userName, password){
+async function getAuthenticationRequest(userName, password) {
     let url = CONFIG.ACCOUNTS_ACCESS_POINT;
     url = url.concat("?userName=", userName, "&passHash=", password);
     // let data = {
     //     userName: userName,
     //     passHash: password
     // }
-  
+
     const response = await fetch(url, {
         headers: {
             'Content-Type': 'application/json'
@@ -59,27 +48,27 @@ async function getAuthenticationRequest(userName, password){
         // body: JSON.stringify(data)
     });
     const authentication = await response.json();
-  
+
     console.log(authentication);
 
     return authentication;
-  }
-  
-  async function postNewRegistration(userName, password){
-      let url = CONFIG.ACCOUNTS_ACCESS_POINT;
-      let data = {
+}
+
+async function postNewRegistration(userName, password) {
+    let url = CONFIG.ACCOUNTS_ACCESS_POINT;
+    let data = {
         userName: userName,
         passHash: password,
-      }
-  
-      const response = await fetch(url, {
-          headers: {
+    }
+
+    const response = await fetch(url, {
+        headers: {
             'Content-Type': 'application/json'
-          },
-          body:JSON.stringify(data),
-          method:"POST"
-      });
-      
-      console.log(response.status);
-      //return response.status;
-  }
+        },
+        body: JSON.stringify(data),
+        method: "POST"
+    });
+
+    console.log(response.status);
+    //return response.status;
+}

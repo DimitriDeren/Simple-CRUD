@@ -35,11 +35,16 @@ export default class AccountController {
             const userName = req.body.userName;
             const passHash = req.body.passHash;
 
-            const NewUserResponse = await AccountDAO.addNewUser(
-                userName,
-                passHash,
-            );
-            
+            // if username and password fields are invalid  
+            if (userName == "" || password == "" || password.length < 5) {
+                res.status(400).json({ error: 'Invalid username or password' });
+                return;
+            } else {
+                const NewUserResponse = await AccountDAO.addNewUser(
+                    userName,
+                    passHash,
+                );
+            }
             //TODO: add condition to check if username already exists
             res.json({ status: "success" });
         } catch (e) {
