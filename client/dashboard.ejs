@@ -12,16 +12,41 @@
       <a class="active top-buttons" href="/client">Home</a>
       <a class="top-buttons" href="/client/add_recipe">Add Recipe</a>
       <a class="top-buttons" href="/client/login_page">Log In</a>
+      <script src="http://localhost:5000/scripts/dashboard.js"></script>
 
     </div>
 
 
     <div id = "recipe" class = "recipe-view">
+<<<<<<< HEAD
       <% for (var i=0; i<recipes.length; i++) { %>
         <div class="recipe-widget" id="<%=recipes[i].id%>" onclick="location.href='/client/update_page';" style="cursor: pointer;">
           <p> <%=recipes[i].title%> </p>
         </div>
       <% } %>
+=======
+      <div class="list-view">
+        <% for (var i=0; i<recipes.length; i++) { %>
+          <div class="recipe-widget" onclick="toggleDisplay()">
+            <p class="recipe-title"> <%= recipes[i].title %> </p>
+          </div>
+        <% } %>
+      </div>
+
+      <div class="recipe-details">
+        <div id="recipe-details-id" style="display:none;">
+          <h1>Testing</h1>
+          <div class="ingredients-list">
+              <p>Testing</p>
+          </div>
+          <div class="directions">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tristique metus. Cras magna tortor, fermentum at arcu ut, ornare rhoncus diam. Quisque tempor quam a mollis aliquet. Vivamus efficitur lorem nec nibh semper bibendum. Maecenas vulputate a urna sed ornare. Sed eros orci, malesuada vel tellus non, euismod sodales neque. Sed commodo faucibus nunc id lacinia. Duis tempor sit amet enim a vulputate. Sed sagittis leo ut neque hendrerit bibendum. Sed efficitur, magna in fringilla dictum, velit diam laoreet velit, vitae consequat quam purus fermentum massa. Pellentesque ultricies facilisis velit, porttitor efficitur odio ornare et.
+  
+              </p>
+          </div>
+        </div>
+      </div>
+>>>>>>> main
     </div>
 
   </div>
