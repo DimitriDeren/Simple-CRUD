@@ -11,6 +11,7 @@
     <script src="/scripts/api/controller.js" ></script>    
     <script src="/scripts/config/config.js" ></script>
     <script src="/scripts/models/recipeModel.js"></script>
+
     <script>
         function checkCookie() {
             let user = getCookie("username");
@@ -79,50 +80,12 @@
         <!-- Submit Button -->
         <button class="button-secondary pure-button" onclick="saveForm()">Add Recipe</button>
         <!-- Form Fields End -->
-
+        
     </form>
-
-            <!-- Form Fields Start -->
-            <!-- Title Field -->
-            <div class="field-div title-div">
-                <p class="input-title">Title*</p>
-                <input class="input title-input" type="text" placeholder="Title" placeholder="Title" />
-            </div>
-
-            <!-- Ingredients Field -->
-            <div>
-                <p class="input-title">Ingredients*</p>
-                <input class="input ingredients-input" type="text" placeholder="Ingredients" />
-            </div>
-
-            <!-- Directions Field -->
-            <div>
-                <p class="input-title">Directions*</p>
-                <textarea cols="40 " rows="10" class="input directions-input" type="text "
-                    placeholder="Directions "></textarea>
-            </div>
-
-            <!-- Image Field -->
-            <div>
-                <p class="input-title">Image</p>
-                <input class="input image-input" type="file" id="img" name="img" accept="image/*" placeholder="Image" />
-            </div>
-
-            <!-- Submit Button -->
-            <button type="button" onclick="saveForm()">Try it</button>
-            <!-- Form Fields End -->
-
-        </form>
-
-    </div>
 
 
 </div>
 
-<body onload="checkCookie()"></body>
-<script src="addRecipe.js"></script>
-<script src="./api/controller.js"></script>
-<script src="./config/config.js"></script>
-<script src="./models/recipeModel.js"></script>
 
+<body onload="checkCookie()"></body>
 </HTML>
