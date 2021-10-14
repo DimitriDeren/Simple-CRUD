@@ -49,7 +49,16 @@
           <button class="button-secondary pure-button update-button" onclick="updateRecipe(this.parentNode.parentNode)">Update</button>
         </div>
       </div>
-    </div>
+
+      <div class="recommendation-list">
+        <h3 class="recommendation-title">Recommendations:</h3>
+        <div class="recipe-widget">
+            <i class="fa fa-angle-left left-icon" onclick="getRecipe(this.parentNode); toggleDisplay();"></i>
+            <p class="recipe-title"> </p>
+            <div class="fa fa-trash trash-icon-right" onclick="removeDisplay(this.parentNode); deleteRecipe(this.parentNode)"></div>
+          </div>
+        </div>
+      </div>
 
   </div>
 

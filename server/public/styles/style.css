@@ -63,6 +63,20 @@ body{
   height: 20vh;
 }
 
+.recommendation-list{
+  float: right;
+  flex: 1;
+  padding-right: 5px;
+  padding-top: 5px;
+  border-left: 1px solid black;
+  overflow: scroll;
+  background-color: #eadedac4;
+}
+
+.recommendation-title{
+  margin-left: 10px;
+}
+
 .recipe-view {
   background-color: #eadeda;
   height: 100vh;
@@ -70,7 +84,7 @@ body{
 }
 
 .recipe-details {
-  float: right;
+  float: center;
   flex: 3;
   padding-left: 10px;
   padding-top: 5px;
@@ -107,8 +121,21 @@ body{
   align-self: center;
 }
 
+.trash-icon-right{
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  align-self: center;
+}
+
 .right-icon{
   margin-right: 10px;
+  cursor: pointer;
+  align-self: center;
+}
+
+.left-icon{
+  margin-left: 10px;
   cursor: pointer;
   align-self: center;
 }
