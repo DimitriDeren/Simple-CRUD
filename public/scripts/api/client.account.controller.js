@@ -1,4 +1,4 @@
-/* when logout button is submitted * need to add functionality */
+/* when logout button is submitted - need to add functionality */
 function submitLogout() {
 
 }
@@ -86,8 +86,7 @@ function checkCookie() {
     let user = getCookie("username");
     if (user != "") {
         alert("Cookie found, Reroute to account page");
-    } else {
-        alert("No cookie, going to login page");
+        window.location.href ="/client/account_page";
     }
 }
 

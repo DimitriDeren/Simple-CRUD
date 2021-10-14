@@ -18,6 +18,10 @@ router
       })
     });
    
+router
+    .route("/account_page")
+    .get((req, res) => 
+        res.render("account", {}));
 
 router
     .route("/add_recipe")
