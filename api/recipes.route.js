@@ -15,4 +15,8 @@ router
     .route("/id/:id")
     .get(RecipesController.apiGetRecipeById);
 
+router
+    .route("/recommend")
+    .get(RecipesController.apiGetRecommendedRecipes);
+
 export default router;
