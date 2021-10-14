@@ -2,7 +2,6 @@
 function submitLogin() {
     let userName = document.getElementById('loginUser').value;
     let password = document.getElementById('loginPwd').value;
-
     authenticationCall(userName, password);
 }
 
@@ -47,9 +46,15 @@ async function getAuthenticationRequest(userName, password) {
         },
         // body: JSON.stringify(data)
     });
+
     const authentication = await response.json();
 
+    if (user != "" && user != null) {
+        setCookie("username", user, 365);
+    }
+
     console.log(authentication);
+
 
     return authentication;
 }
