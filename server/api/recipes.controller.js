@@ -67,7 +67,15 @@ export default class RecipesController {
             const response = await fetch(url);
             const data = await response.json();
 
-            res.json(data);
+            const recipes = data.hits.map((item) => {
+                return {
+                    title: item.recipe.label,
+                    ingredients: item.recipe.ingredientLines,
+                    url: item.recipe.uri
+                };
+            })
+
+            res.json(recipes);
         } catch (e) {
             console.log(`api, ${e}`);
             res.status(500).json({ error: e });
