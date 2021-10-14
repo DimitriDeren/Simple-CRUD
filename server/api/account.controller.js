@@ -10,7 +10,7 @@ export default class AccountController {
         if (req.query.userName) {
             filters.userName = req.query.userName;
         }
-
+        // TODO: need to check if user doesn't exist or password is incorrect
         const loginToken = await AccountDAO.getLoginToken({
             filters,
             localToken
@@ -33,7 +33,7 @@ export default class AccountController {
             const userName = req.body.userName;
             const password = req.body.password;
 
-            // if username and password fields are invalid  
+            // if username and password fields are invalid
             if (userName == "" || password == "" || password.length < 5) {
                 res.status(400).json({ error: 'Invalid username or password' });
                 return;

@@ -18,7 +18,7 @@ async function postRequest(recipeModel){
     let data = {
       title: recipeModel.title,
       ingredients: recipeModel.ingredients,
-      directions: recipeModel.directions,
+      directions: recipeModel.directions, 
       image: recipeModel.image,
     }
     const otherParam={
