@@ -12,11 +12,14 @@ function createWidget() {
 }
 
 function createRecWidget(element) {
+  let parent = document.getElementById("recommendation-view");
+  // parent.innerHTML = "";
+
   getRequestRecommendation().then((data) => {
     if(data.length === 0){
       alert("No matches found");
     } else {
-      for (let i = 0; i < 8; i++) {
+      for (let i = 0; i < 80; i++) {
         let recipeWidget = document.createElement("div");
         recipeWidget.className = "recipe-widget";
         recipeWidget.id = data[i].title;
@@ -43,7 +46,6 @@ function createRecWidget(element) {
         recipeWidget.appendChild(recipeTitle);
         recipeWidget.appendChild(trashIcon);
   
-        let parent = document.getElementById("recommendation-view");
         parent.appendChild(recipeWidget);
       }
     }

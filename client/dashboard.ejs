@@ -50,19 +50,22 @@
       </div>
 
       <div class="recommendation-list" id="recommendation-view">
-        <h3 class="recommendation-title">Recommendations:</h3>
+        <div class="search-field"">
+          <h3 class="recommendation-title">Recommendations:</h3>
 
-        <form class="search-box" id="searchthis" action="/search" style="display:inline;" method="get">
-          <input id="namanyay-search-box" name="q" size="40" type="text" placeholder="Search Recipe"/>
-          <input id="namanyay-search-btn" value="Search" type="button" onclick="createRecWidget(this)"/>
-        </form>
-<!-- 
-        <div class="recipe-widget">
+          <form class="search-box" id="searchthis" action="/search" style="display:inline;" method="get">
+            <input id="namanyay-search-box" name="q" size="40" type="text" placeholder="Search Recipe"/>
+            <input id="namanyay-search-btn" value="Search" type="button" onclick="createRecWidget(this)"/>
+          </form>
+        </div>
+
+        <div class="recommendation-list">
+          <!-- <div class="recipe-widget">
             <i class="fa fa-angle-left left-icon" onclick="getRecipe(this.parentNode); toggleDisplay();"></i>
             <p class="recipe-title"> </p>
             <div class="fa fa-trash trash-icon-right" onclick="removeDisplay(this.parentNode); deleteRecipe(this.parentNode)"></div>
-          </div>
-        </div> -->
+          </div> -->
+        </div>
       </div>
 
   </div>
