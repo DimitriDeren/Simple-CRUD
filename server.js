@@ -10,7 +10,7 @@ const app = express();
 const __dirname = path.resolve();
 
 app.set('view engine', 'ejs');
-app.set('views', '../client');
+app.set('views', './client');
 
 app.use(cors());
 app.use(express.json());
