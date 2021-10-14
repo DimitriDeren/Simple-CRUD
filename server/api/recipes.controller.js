@@ -1,3 +1,5 @@
+import fetch from 'node-fetch';
+
 import RecipesDAO from '../data_access_model/RecipesDAO.js';
 
 export default class RecipesController {
@@ -38,6 +40,34 @@ export default class RecipesController {
             }
 
             res.json(recipe);
+        } catch (e) {
+            console.log(`api, ${e}`);
+            res.status(500).json({ error: e });
+        }
+    }
+
+    static async apiGetRecommendedRecipes(req, res, next) {
+        try {
+            let url = process.env.EDAMAM_API_URI;
+
+            url = url.concat(`app_id=${process.env.EDAMAM_API_ID}`);
+            url = url.concat(`&app_key=${process.env.EDAMAM_API_KEY}`);
+            url = url.concat("&type=public");
+            url = url.concat("&q=chicken");
+
+            console.log(process.env.EDAMAM_API_URI);
+            console.log(process.env.EDAMAM_API_ID);
+            console.log(process.env.EDAMAM_API_KEY);
+            console.log(url);
+
+            // for (const [key, value] of Object.entries(queryParameters)) {
+            //     url = url.concat(`&${key}=${value}`);
+            // }
+
+            const response = await fetch(url);
+            const data = await response.json();
+
+            res.json(data);
         } catch (e) {
             console.log(`api, ${e}`);
             res.status(500).json({ error: e });
