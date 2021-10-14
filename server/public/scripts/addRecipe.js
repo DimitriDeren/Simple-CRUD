@@ -4,12 +4,11 @@ function saveForm() {
   var directions = document.querySelector('.directions-input').value; //gets the directions field value
   var image = document.querySelector('.image-input').value; //gets the image field value
 
-  let model = new RecipeModel(title, ingredients, directions, image);
+  let model = new RecipeModel(title, ingredients, directions);
 
   console.log("Title: " + title);
   console.log("Ingredient: " + ingredients);
   console.log("Directions: " + directions);
-  console.log("Image: " + image);
 
   console.log(model);
 
@@ -17,9 +16,5 @@ function saveForm() {
     console.log(data);
   });
 
-  // Uncomment when wanting to do getRequest instead
-  // getRequest().then((data) => {
-  //   console.log(data);
-  // }); 
 
 }

@@ -2,6 +2,13 @@
 
   <head>
     <link rel="stylesheet" href="http://localhost:5000/styles/style.css">
+    <script src="http://localhost:5000/scripts/dashboard.js"></script>
+    <script src="http://localhost:5000/scripts/api/controller.js" ></script>    
+    <script src="http://localhost:5000/scripts/config/config.js" ></script>
+    <script src="http://localhost:5000/scripts/models/recipeModel.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
   </head>
   
   <div class="home-view">
@@ -11,29 +18,40 @@
       <a class="active top-buttons" href="/client">Home</a>
       <a class="top-buttons" href="/client/add_recipe">Add Recipe</a>
       <a class="top-buttons" href="/client/login_page">Log In</a>
+      <script src="http://localhost:5000/scripts/dashboard.js"></script>
+      
 
     </div>
 
 
     <div id = "recipe" class = "recipe-view">
-      <% for (var i=0; i<recipes.length; i++) { %>
-        <div class="recipe-widget">
-          <p> <%= recipes[i].title %> </p>
-        </div>
-      <% } %>
+      <div class="list-view">
+        <% for (var i=0; i<recipes.length; i++) { %>
+          <div class="recipe-widget" id=<%=recipes[i]._id%>>
+            <div class="fa fa-trash trash-icon" onclick="removeDisplay(this.parentNode); deleteRecipe(this.parentNode)"></div>
+            <p class="recipe-title"> <%= recipes[i].title %> </p>
+            <i class="fa fa-angle-right right-icon" onclick="getRecipe(this.parentNode); toggleDisplay();"></i>
+          </div>
+        <% } %>
+      </div>
 
+      <div class="recipe-details">
+        <div id="recipe-details-id" style="display:none;">
+          <h1 class="title-dashboard"></h1>
+          <div class="ingredients-list">
+              <textarea class="ingredients-dashboard auth-user-input"></textarea>
+          </div>
+          <div class="directions">
+              <textarea class="directions-dashboard auth-user-input">
+              </textarea>
+          </div>
+
+          <button class="button-secondary pure-button update-button" onclick="updateRecipe(this.parentNode.parentNode)">Update</button>
+        </div>
+      </div>
     </div>
 
   </div>
 
-  <script src="dashboard.js"></script>
 </HTML> 
-
-<!-- 
-<div class="search-container">
-  <form action="/action_page.php">
-    <input type="text" placeholder="Search" name="search">
-    <button type="submit"><i class="fa fa-search"></i></button>
-  </form>
-</div> -->
 
