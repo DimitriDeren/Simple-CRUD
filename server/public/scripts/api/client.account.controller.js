@@ -58,7 +58,7 @@ async function postNewRegistration(userName, password) {
     let url = CONFIG.ACCOUNTS_ACCESS_POINT;
     let data = {
         userName: userName,
-        passHash: password,
+        password: password,
     }
 
     const response = await fetch(url, {

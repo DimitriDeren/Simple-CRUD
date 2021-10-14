@@ -1,6 +1,7 @@
+import CryptoJS from 'crypto-js';
+
 // Reference to application database
 let accounts;
-
 /**
  * Accounts Data Access Model
  */
@@ -27,7 +28,10 @@ export default class AccountDAO {
         filters = null,
         localToken
     } = {}) {
+
         let query;
+        localToken = CryptoJS.SHA256(localToken).toString();
+
         if (filters) {
             if ("userName" in filters) {
                 query = { "userName": { $eq: filters["userName"] } };

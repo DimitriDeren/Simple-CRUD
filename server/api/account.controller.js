@@ -1,4 +1,5 @@
 import AccountDAO from '../data_access_model/AccountDAO.js';
+import CryptoJS from 'crypto-js';
 
 export default class AccountController {
 
@@ -15,8 +16,6 @@ export default class AccountController {
             localToken
         });
 
-        console.log(loginToken);
-
         // let response = {
         //     Authenticated: false,
         // };
@@ -25,7 +24,6 @@ export default class AccountController {
         //         Authenticated: true,
         //     };
         // }
-
         
         res.json(loginToken)
     }
@@ -33,17 +31,20 @@ export default class AccountController {
     static async apiPostNewUser(req, res, next) {
         try {
             const userName = req.body.userName;
-            const passHash = req.body.passHash;
+            const password = req.body.password;
 
             // if username and password fields are invalid  
             if (userName == "" || password == "" || password.length < 5) {
                 res.status(400).json({ error: 'Invalid username or password' });
                 return;
             } else {
+
+                let passHash = CryptoJS.SHA256(password).toString();
                 const NewUserResponse = await AccountDAO.addNewUser(
                     userName,
                     passHash,
                 );
+
             }
             //TODO: add condition to check if username already exists
             res.json({ status: "success" });
