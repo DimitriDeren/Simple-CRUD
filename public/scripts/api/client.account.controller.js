@@ -18,9 +18,7 @@ function authenticationCall(userName, password) {
     console.log("username: " + userName);
     console.log("password: " + password);
     console.log("--------------------------");
-    if (getAuthenticationRequest(userName, password)) {
-        setCookie("username", userName, 30);
-    }
+    getAuthenticationRequest(userName, password);   
 }
 
 function registrationCall(userName, password) {
@@ -51,7 +49,10 @@ async function getAuthenticationRequest(userName, password) {
 
     const authentication = await response.json();
 
-    console.log(authentication);
+    if (authentication.Authenticated) {
+        setCookie("username", userName, 30);
+    }
+    console.log(authentication.Authenticated);
 
 
     return authentication;
