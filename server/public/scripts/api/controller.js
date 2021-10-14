@@ -13,6 +13,23 @@ async function getRequest(recipeID){
   return data;
 }
 
+async function getRequestRecommendation(){
+  let url = CONFIG.ACCESS_POINT;
+  let recipeQuery = document.getElementById("namanyay-search-box").value;
+  url = url.concat("recommend?recipe_query=");
+  url = url.concat(recipeQuery);
+
+  console.log(recipeQuery);
+  console.log(url);
+
+  const response = await fetch(url);
+  const data = await response.json();
+
+  console.log(data);
+
+  return data;
+}
+
 async function postRequest(recipeModel){
     let url = CONFIG.ACCESS_POINT;
     let data = {

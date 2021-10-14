@@ -53,7 +53,7 @@ export default class RecipesController {
             url = url.concat(`app_id=${process.env.EDAMAM_API_ID}`);
             url = url.concat(`&app_key=${process.env.EDAMAM_API_KEY}`);
             url = url.concat("&type=public");
-            url = url.concat("&q=chicken");
+            url = url.concat(`&q=${req.query.recipe_query}`);
 
             console.log(process.env.EDAMAM_API_URI);
             console.log(process.env.EDAMAM_API_ID);
@@ -67,7 +67,15 @@ export default class RecipesController {
             const response = await fetch(url);
             const data = await response.json();
 
-            res.json(data);
+            const recipes = data.hits.map((item) => {
+                return {
+                    title: item.recipe.label,
+                    ingredients: item.recipe.ingredientLines,
+                    url: item.recipe.uri
+                };
+            })
+
+            res.json(recipes);
         } catch (e) {
             console.log(`api, ${e}`);
             res.status(500).json({ error: e });
