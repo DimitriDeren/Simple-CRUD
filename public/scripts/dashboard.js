@@ -38,6 +38,7 @@ function getRecipe(element){
 
     div.id=element.id;
     console.log(div.id);
+    console.log(data);
     
     title.innerText = recipe.title;
     ingredients.innerText = recipe.ingredients;
