@@ -39,9 +39,9 @@ MongoClient.connect(
         });
     });
 
-//Connect to Heroku
-if (port == null || port == "") {
-  port = 8000;
-}
-app.listen(port);
+// //Connect to Heroku
+// if (port == null || port == "") {
+//   port = 8000;
+// }
+// app.listen(port);
 
