@@ -363,7 +363,7 @@ input[type="password"]:focus {
 
 /* Search Box Start */
 #namanyay-search-btn {
-  background:#0099ff;
+  background:rgb(138, 48, 51);
   color:white;
   font: 'trebuchet ms', trebuchet;
   padding:10px 20px;
@@ -373,6 +373,7 @@ input[type="password"]:focus {
   -o-border-radius:0 10px 10px 0;
   border:0 none;
   font-weight:bold;
+  cursor: pointer;
   }
    
   #namanyay-search-box {
