@@ -53,7 +53,7 @@ export default class RecipesController {
             url = url.concat(`app_id=${process.env.EDAMAM_API_ID}`);
             url = url.concat(`&app_key=${process.env.EDAMAM_API_KEY}`);
             url = url.concat("&type=public");
-            url = url.concat("&q=chicken");
+            url = url.concat(`&q=${req.query.recipe_query}`);
 
             console.log(process.env.EDAMAM_API_URI);
             console.log(process.env.EDAMAM_API_ID);
