@@ -1,3 +1,8 @@
+/* when logout button is submitted * need to add functionality */
+function submitLogout() {
+
+}
+
 /* when log in form is submitted */
 function submitLogin() {
     let userName = document.getElementById('loginUser').value;
