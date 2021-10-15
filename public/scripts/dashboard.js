@@ -28,7 +28,7 @@ function createRecWidget(element) {
         let leftIcon = document.createElement("i");
         leftIcon.className = "fa fa-angle-left left-icon";
         leftIcon.onclick = function () {
-          getRecipe(element.parentNode.id);
+          displayRecipe(data[i]);
           toggleDisplay();
         };
   
@@ -87,6 +87,18 @@ function getRecipe(element) {
     // console.log("NEW DATA: " + data);
     // console.log("DIRECTIONS NEW: " + directions.innerHTML);
   });
+}
+
+function displayRecipe(recData){
+  let recipe = recData;
+  var title = document.querySelector(".title-dashboard"); //gets the title field value
+  var ingredients = document.querySelector(".ingredients-dashboard"); //gets the ingredients field value
+  var directions = document.querySelector(".directions-dashboard"); //gets the directions field value
+  var div = document.querySelector(".recipe-details");
+
+  title.innerText = recipe.title;
+  ingredients.value = recipe.ingredients.join("\n");
+  directions.innerHTML = recipe.url.replace(/\r?\n/g, "\n");
 }
 
 function deleteRecipe(element) {
