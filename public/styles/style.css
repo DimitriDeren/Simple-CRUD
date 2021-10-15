@@ -173,6 +173,7 @@ body{
   border: 0;
   width: 70vw;
   resize: vertical;
+  min-height: 160px;
   max-height: 500px;
 }
 
@@ -183,6 +184,26 @@ body{
 .directions-dashboard{
   min-height: 400px;
 }
+
+.ingredients-dashboard{
+  border: 1px solid black;
+  width: 58vw;
+  padding: 5px;
+  margin-top: 0;
+}
+
+.ingredients-header{
+  margin-bottom: 0;
+}
+
+.directions-dashboard{
+  margin-top: 0;
+}
+
+.directions-header{
+  margin-bottom: 0;
+}
+
 /* Dashboard Screen Styling End */
 
 /* Add Recipe Styling Start */
