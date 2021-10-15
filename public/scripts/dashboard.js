@@ -77,16 +77,15 @@ function getRecipe(element) {
     var div = document.querySelector(".recipe-details");
 
     div.id = element.id;
-    console.log(div.id);
-    console.log(data);
+    // console.log("OLD DATA: " + data);
+    // console.log("DIRECTIONS OLD: " + directions.innerHTML);
 
     title.innerText = recipe.title;
     ingredients.innerText = recipe.ingredients;
-    if (directions.innerHTML == null || directions.innerHTML == "") {
-      console.log("empty");
-    } else {
-      directions.innerHTML = recipe.directions.replace(/\r?\n/g, "\n");
-    }
+    directions.innerHTML = recipe.directions.replace(/\r?\n/g, "\n");
+    
+    // console.log("NEW DATA: " + data);
+    // console.log("DIRECTIONS NEW: " + directions.innerHTML);
   });
 }
 
