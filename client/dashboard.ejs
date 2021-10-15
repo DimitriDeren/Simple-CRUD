@@ -36,16 +36,23 @@
 
       <div class="recipe-details">
         <div id="recipe-details-id" style="display:none;">
-          <h1 class="title-dashboard"></h1>
+          <h1 contenteditable="true" class="title-dashboard"></h1>
+          <div class="image-view"></div>
+          <h4 class="ingredients-header">Ingredients: </h4>
           <div class="ingredients-list">
               <textarea class="ingredients-dashboard auth-user-input"></textarea>
           </div>
+          <h4 class="directions-header">
+            <a class="directions-link">
+              Directions
+            </a>
+          </h4>
           <div class="directions">
               <textarea class="directions-dashboard auth-user-input">
               </textarea>
           </div>
 
-          <button class="button-secondary pure-button update-button" onclick="updateRecipe(this.parentNode.parentNode)">Update</button>
+          <button class="button-secondary pure-button update-button" onclick="updateRecipe(this.parentNode.parentNode); ">Update</button>
         </div>
       </div>
 

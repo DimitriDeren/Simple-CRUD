@@ -36,17 +36,10 @@ function createRecWidget(element) {
         recipeTitle.className = "recipe-title";
         recipeTitle.innerText = data[i].title;
   
-        let trashIcon = document.createElement("div");
-        trashIcon.className = "fa fa-trash trash-icon-right";
-        trashIcon.onclick = function () {
-          removeDisplay(element.parentNode);
-          deleteRecipe(element.parentNode);
-        };
+
   
         recipeWidget.appendChild(leftIcon);
         recipeWidget.appendChild(recipeTitle);
-        recipeWidget.appendChild(trashIcon);
-  
         parent.appendChild(recipeWidget);
       }
     }
@@ -81,7 +74,7 @@ function getRecipe(element) {
     // console.log("DIRECTIONS OLD: " + directions.innerHTML);
 
     title.innerText = recipe.title;
-    ingredients.innerText = recipe.ingredients;
+    ingredients.innerHTML = recipe.ingredients.replace(/\r?\n/g, "\n");;
     directions.innerHTML = recipe.directions.replace(/\r?\n/g, "\n");
     
     // console.log("NEW DATA: " + data);
@@ -89,16 +82,30 @@ function getRecipe(element) {
   });
 }
 
+// Function to display recipes for RECOMMENDATIONS
 function displayRecipe(recData){
   let recipe = recData;
   var title = document.querySelector(".title-dashboard"); //gets the title field value
   var ingredients = document.querySelector(".ingredients-dashboard"); //gets the ingredients field value
-  var directions = document.querySelector(".directions-dashboard"); //gets the directions field value
-  var div = document.querySelector(".recipe-details");
+  var directions = document.querySelector(".directions-link"); //gets the directions field value
+  var imageView = document.querySelector(".image-view");
 
   title.innerText = recipe.title;
   ingredients.value = recipe.ingredients.join("\n");
-  directions.innerHTML = recipe.url.replace(/\r?\n/g, "\n");
+
+  let link = document.createElement('a');
+  directions.setAttribute('href', recipe.url);
+  // let direction = "Directions:";
+  // link.appendChild(direction);
+  
+  // directions.innerText = "";
+  // directions.appendChild(link);
+
+  let img = document.createElement('img');
+  img.src = recipe.image;
+  imageView.innerHTML = "";
+  imageView.appendChild(img);
+  
 }
 
 function deleteRecipe(element) {

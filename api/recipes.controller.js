@@ -69,9 +69,10 @@ export default class RecipesController {
 
             const recipes = data.hits.map((item) => {
                 return {
+                    image: item.recipe.image,
                     title: item.recipe.label,
                     ingredients: item.recipe.ingredientLines,
-                    url: item.recipe.uri
+                    url: item.recipe.url
                 };
             })
 
