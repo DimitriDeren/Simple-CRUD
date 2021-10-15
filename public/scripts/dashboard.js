@@ -12,14 +12,15 @@ function createWidget() {
 }
 
 function createRecWidget(element) {
-  let parent = document.getElementById("recommendation-view");
-  // parent.innerHTML = "";
+  let parent = document.getElementById("rec-list-view");
+  // let parent = document.getElementById("recommendation-view");
+  parent.innerHTML = "";
 
   getRequestRecommendation().then((data) => {
     if(data.length === 0){
       alert("No matches found");
     } else {
-      for (let i = 0; i < 80; i++) {
+      for (let i = 0; i < 10; i++) {
         let recipeWidget = document.createElement("div");
         recipeWidget.className = "recipe-widget";
         recipeWidget.id = data[i].title;
