@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import path from 'path';
 import cookieParser from 'cookie-parser';
+import session from 'express-session';
 import mongoose from 'mongoose';
 import passport from 'passport';
 import strategy from 'passport-local';
@@ -23,7 +24,7 @@ app.set('views', './client');
 app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
-app.use(require('express-session')({
+app.use(session({
     secret: 'nwen group project',
     resave: false,
     saveUninitialized: false
@@ -37,7 +38,7 @@ passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());
 
 // Mongoose config
-mongoose.connect(process.env.APP_DB_URI);
+mongoose.connect("mongodb+srv://developer:developer@cluster0.qlvpm.mongodb.net/nwen_database?retryWrites=true&w=majority");
 
 // Setup public route
 app.use(express.static(path.join(__dirname, 'public')));

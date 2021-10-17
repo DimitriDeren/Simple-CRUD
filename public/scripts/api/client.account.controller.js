@@ -1,6 +1,13 @@
 /* when logout button is submitted, cookies are cleared from the root path */
-function submitLogout() {
+async function submitLogout() {
     document.cookie = "username=; expires=Saturday, 01 Jan 2000 00:00:00 UTC; path=/";
+
+    // Passport authentication
+    url = CONFIG.ACCOUNTS_ACCESS_POINT;
+    url = url.concat("/logout");
+
+    const passResponse = await fetch(url);
+
     window.location.href ="/client/login_page";
 }
 
@@ -61,6 +68,22 @@ async function getAuthenticationRequest(userName, password) {
     }
     console.log(authentication.Authenticated);
 
+    // Passport authentication
+    url = CONFIG.ACCOUNTS_ACCESS_POINT;
+    url = url.concat("/login");
+    let passData = {
+        username: userName,
+        password: password
+    };
+
+    const passResponse = await fetch(url, {
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(passData),
+        method: "POST"
+    });
+
     return authentication;
 }
 
@@ -84,6 +107,21 @@ async function postNewRegistration(userName, password) {
     } else {
         alert("There was a problem creating your account.\nPlease try again.");
     }
+
+    // Passport authentication
+    url = url.concat("/register");
+    let passData = {
+        username: userName,
+        password: password
+    };
+
+    const passResponse = await fetch(url, {
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(passData),
+        method: "POST"
+    });
 
     console.log(response.status);
 }
