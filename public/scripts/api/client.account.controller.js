@@ -59,6 +59,11 @@ async function getAuthenticationRequest(userName, password) {
         setCookie("username", userName, 30);
         window.location.href ="/client/account_page";
     }
+    else {
+        alert("Incorrect login details. Please try again");
+        document.getElementById('loginUser').value = "";
+        document.getElementById('loginPwd').value = "";
+    }
     console.log(authentication.Authenticated);
 
     return authentication;
