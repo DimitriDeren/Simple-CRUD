@@ -38,10 +38,3 @@ MongoClient.connect(
             console.log(__dirname);
         });
     });
-
-// //Connect to Heroku
-// if (port == null || port == "") {
-//   port = 8000;
-// }
-// app.listen(port);
-
