@@ -1,12 +1,14 @@
 /* when logout button is submitted, cookies are cleared from the root path */
 function submitLogout() {
     document.cookie = "username=; expires=Saturday, 01 Jan 2000 00:00:00 UTC; path=/";
-    window.location.href ="/client/login_page";
     try {
+        console.log("reached");
         mGoogleSignInClient.signOut();
     } catch (e) {
         console.log("no google acc attached");
     }
+    console.log(mGoogleSignInClient.signOut());
+    window.location.href ="/client/login_page";
 }
 
 /* when log in form is submitted */
