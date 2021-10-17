@@ -24,7 +24,7 @@ export default class AccountController {
         //         Authenticated: true,
         //     };
         // }
-        
+
         res.json(loginToken)
     }
 
@@ -33,9 +33,11 @@ export default class AccountController {
             const userName = req.body.userName;
             const password = req.body.password;
 
+            var userHasInvalidChar = userHasSpec(userName);
+
             // if username and password fields are invalid
-            if (userName == "" || password == "" || password.length < 5) {
-                res.status(400).json({ error: 'Invalid username or password' });
+            if (userName == "" || password == "" || password.length < 5 || userHasInvalidChar || password.includes(" ")) {
+                res.status(400).json({ error: 'Invalid registration details' });
                 return;
             } else {
 
@@ -51,5 +53,17 @@ export default class AccountController {
         } catch (e) {
             res.status(500).json({ error: e.message });
         }
+    }
+}
+
+/* checks if the username contains special characters */
+function userHasSpec(username) {
+    var specChars = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+    if (specChars.test(username)) {
+        console.log("true, invalid");
+        return true;
+    } else {
+        console.log("false, valid");
+        return false;
     }
 }

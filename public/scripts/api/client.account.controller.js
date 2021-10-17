@@ -83,6 +83,8 @@ async function postNewRegistration(userName, password) {
         window.location.href ="/client/login_page";
     } else {
         alert("There was a problem creating your account.\nPlease try again.");
+        document.getElementById('registerUser').value = "";
+        document.getElementById('registerPwd').value = "";
     }
 
     console.log(response.status);
