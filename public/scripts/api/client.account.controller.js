@@ -79,6 +79,12 @@ async function postNewRegistration(userName, password) {
         method: "POST"
     });
 
+    if (response.status == 200) {
+        window.location.href ="/client/login_page";
+    } else {
+        alert("There was a problem creating your account.\nPlease try again.");
+    }
+
     console.log(response.status);
 }
 
