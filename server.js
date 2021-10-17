@@ -1,10 +1,19 @@
 import express from 'express';
 import cors from 'cors';
 import path from 'path';
+import cookieParser from 'cookie-parser';
+import session from 'express-session';
+import mongoose from 'mongoose';
+import passport from 'passport';
+import strategy from 'passport-local';
 
 import RecipeRoutes from './api/recipes.route.js';
 import AccountRoutes from './api/account.route.js';
 import ClientRoutes from './api/client.route.js';
+
+import Account from './models/account.js';
+
+let LocalStrategy = strategy.Strategy;
 
 const app = express();
 const __dirname = path.resolve();
@@ -14,6 +23,22 @@ app.set('views', './client');
 
 app.use(cors());
 app.use(express.json());
+app.use(cookieParser());
+app.use(session({
+    secret: 'nwen group project',
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Passport config
+passport.use(new LocalStrategy(Account.authenticate()));
+passport.serializeUser(Account.serializeUser());
+passport.deserializeUser(Account.deserializeUser());
+
+// Mongoose config
+mongoose.connect("mongodb+srv://developer:developer@cluster0.qlvpm.mongodb.net/nwen_database?retryWrites=true&w=majority");
 
 // Setup public route
 app.use(express.static(path.join(__dirname, 'public')));

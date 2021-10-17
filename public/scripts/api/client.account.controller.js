@@ -1,6 +1,13 @@
 /* when logout button is submitted, cookies are cleared from the root path */
-function submitLogout() {
+async function submitLogout() {
     document.cookie = "username=; expires=Saturday, 01 Jan 2000 00:00:00 UTC; path=/";
+
+    // Passport authentication
+    url = CONFIG.ACCOUNTS_ACCESS_POINT;
+    url = url.concat("/logout");
+
+    const passResponse = await fetch(url);
+
     signOut();
     window.location.href ="/client/login_page";
 }
@@ -75,6 +82,22 @@ async function getAuthenticationRequest(userName, password) {
     }
     console.log(authentication.Authenticated);
 
+    // Passport authentication
+    url = CONFIG.ACCOUNTS_ACCESS_POINT;
+    url = url.concat("/login");
+    let passData = {
+        username: userName,
+        password: password
+    };
+
+    const passResponse = await fetch(url, {
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(passData),
+        method: "POST"
+    });
+
     return authentication;
 }
 
@@ -98,6 +121,21 @@ async function postNewRegistration(userName, password) {
     } else {
         alert("There was a problem creating your account.\nPlease try again.");
     }
+
+    // Passport authentication
+    url = url.concat("/register");
+    let passData = {
+        username: userName,
+        password: password
+    };
+
+    const passResponse = await fetch(url, {
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(passData),
+        method: "POST"
+    });
 
     console.log(response.status);
 }
@@ -161,16 +199,16 @@ function getCookie(cname) {
 function onSignIn(googleUser) {
     // Useful data for your client-side scripts:
     var profile = googleUser.getBasicProfile();
-    // console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-    // console.log('Full Name: ' + profile.getName());
-    // console.log('Given Name: ' + profile.getGivenName());
-    // console.log('Family Name: ' + profile.getFamilyName());
-    // console.log("Image URL: " + profile.getImageUrl());
-    // console.log("Email: " + profile.getEmail());
+    console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+    console.log('Full Name: ' + profile.getName());
+    console.log('Given Name: ' + profile.getGivenName());
+    console.log('Family Name: ' + profile.getFamilyName());
+    console.log("Image URL: " + profile.getImageUrl());
+    console.log("Email: " + profile.getEmail());
 
     // The ID token you need to pass to your backend:
-    // var id_token = googleUser.getAuthResponse().id_token;
-    // console.log("ID Token: " + id_token);
+    var id_token = googleUser.getAuthResponse().id_token;
+    console.log("ID Token: " + id_token);
 
     setCookie("username", profile.getName(), 30);
     window.location.href ="/client/account_page";

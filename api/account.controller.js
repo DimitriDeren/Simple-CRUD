@@ -1,3 +1,5 @@
+import passport from 'passport';
+import Account from '../models/account.js';
 import AccountDAO from '../data_access_model/AccountDAO.js';
 import CryptoJS from 'crypto-js';
 
@@ -52,4 +54,28 @@ export default class AccountController {
             res.status(500).json({ error: e.message });
         }
     }
+
+    // Passport Functions
+
+    static apiRegister(req, res, next) {
+        Account.register(new Account({ username: req.body.username }), req.body.password, function(err, account) {
+            if (err) {
+                return res.render('registration');
+            }
+
+            passport.authenticate('local')(req, res, function () {
+                res.redirect('/client');
+            })
+        })
+    }
+
+    static apiLogin(req, res, next) {
+        res.redirect('/client');
+    }
+
+    static apiLogout(req, res, next) {
+        req.logout();
+        res.redirect('/client');
+    }
+
 }
