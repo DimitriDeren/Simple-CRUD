@@ -1,16 +1,16 @@
 /* when logout button is submitted, cookies are cleared from the root path */
 function submitLogout() {
     document.cookie = "username=; expires=Saturday, 01 Jan 2000 00:00:00 UTC; path=/";
-    googleSignOut();
+    signOut();
     window.location.href ="/client/login_page";
 }
 
-function googleSignOut() {
+function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
       console.log('User signed out.');
     });
-}
+  }
 
 /* when log in form is submitted */
 function submitLogin() {
