@@ -2,8 +2,8 @@ import loadtest from 'loadtest';
 
 describe('Recipe APIs', () => {
 
-    describe('Performance Test - GET for Localhost', () => {
-        it('should return all the recipes', function(done) {
+    describe('Performance Test - GET for localhost', () => {
+        it('should return all the recipes - localhost', function(done) {
             this.timeout(1000 * 60);
 
             const options = {
@@ -26,7 +26,7 @@ describe('Recipe APIs', () => {
     });
 
     describe('Performance Test - GET for Heroku', () => {
-      it('should return all the recipes', function(done) {
+      it('should return all the recipes - Heroku', function(done) {
           this.timeout(1000 * 60);
 
           const options = {
@@ -48,8 +48,8 @@ describe('Recipe APIs', () => {
       });
   });
 
-    describe('Performance Test - POST for Localhost', () => {
-        it('It should create recipes', function(done) {
+    describe('Performance Test - POST for localhost', () => {
+        it('It should create recipes - localhost', function(done) {
             this.timeout(1000 * 60);
 
             const options = {
@@ -81,7 +81,7 @@ describe('Recipe APIs', () => {
     });
 
     describe('Performance Test - POST for Heroku', () => {
-        it('It should create recipes', function(done) {
+        it('It should create recipes - Heroku', function(done) {
             this.timeout(1000 * 60);
 
             const options = {
