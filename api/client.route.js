@@ -18,6 +18,25 @@ router
       })
     });
    
+router
+    .route("/guest_dashboard")
+    .get(async (req, res) => {
+        const { recipesList, totalNumRecipes } = await RecipesDAO.getRecipes({
+        });
+          res.render("guestDashboard", {
+            recipes: recipesList
+          })
+        });
+
+router
+    .route("/account_page")
+    .get((req, res) => 
+        res.render("account", {}));
+
+// router
+//     .route("/guess_dashboard")
+//     .get((req, res) => 
+//         res.render("guess.dashboard", {}));
 
 router
     .route("/add_recipe")
