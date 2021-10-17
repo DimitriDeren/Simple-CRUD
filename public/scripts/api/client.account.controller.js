@@ -211,5 +211,6 @@ function onSignIn(googleUser) {
     console.log("ID Token: " + id_token);
 
     setCookie("username", profile.getName(), 30);
+    window.location.href ="/client/account_page";
   }
 

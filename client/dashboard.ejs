@@ -1,76 +1,81 @@
 <!DOCTYPE html>
 
-  <head>
-    <link rel="stylesheet" href="/styles/style.css">
-    <script src="/scripts/dashboard.js"></script>
-    <script src="/scripts/api/controller.js" ></script>    
-    <script src="/scripts/config/config.js" ></script>
-    <script src="/scripts/models/recipeModel.js"></script>
-    <script src="/scripts/api/client.account.controller.js"></script>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  </head>
-  
-  <div class="home-view">
+<head>
+  <link rel="stylesheet" href="/styles/style.css">
+  <script src="/scripts/dashboard.js"></script>
+  <script src="/scripts/api/controller.js"></script>
+  <script src="/scripts/config/config.js"></script>
+  <script src="/scripts/models/recipeModel.js"></script>
+  <script src="/scripts/api/client.account.controller.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 
-    <div class="topnav">
+<div class="home-view">
 
-      <a class="top-buttons" href="/client">Home</a>
-      <a class="top-buttons" href="/client/add_recipe">Add Recipe</a>
-      <a class="top-buttons" href="/client/login_page">Account</a>
+  <div class="topnav">
+
+    <a class="top-buttons" href="/client">Home</a>
+    <a class="top-buttons" href="/client/add_recipe">Add Recipe</a>
+    <a class="top-buttons" href="/client/login_page">Account</a>
+  </div>
+
+
+  <div id="recipe" class="recipe-view">
+    <div class="list-view">
+      <% for (var i=0; i<recipes.length; i++) { %>
+        <div class="recipe-widget" id=<%=recipes[i]._id%>>
+          <div class="fa fa-trash trash-icon" onclick="removeDisplay(this.parentNode); deleteRecipe(this.parentNode)">
+          </div>
+          <p class="recipe-title">
+            <%= recipes[i].title %>
+          </p>
+          <i class="fa fa-angle-right right-icon" onclick="getRecipe(this.parentNode); toggleDisplay();"></i>
+        </div>
+        <% } %>
     </div>
 
-
-    <div id = "recipe" class = "recipe-view">
-      <div class="list-view">
-        <% for (var i=0; i<recipes.length; i++) { %>
-          <div class="recipe-widget" id=<%=recipes[i]._id%>>
-            <div class="fa fa-trash trash-icon" onclick="removeDisplay(this.parentNode); deleteRecipe(this.parentNode)"></div>
-            <p class="recipe-title"> <%= recipes[i].title %> </p>
-            <i class="fa fa-angle-right right-icon" onclick="getRecipe(this.parentNode); toggleDisplay();"></i>
-          </div>
-        <% } %>
-      </div>
-
-      <div class="recipe-details">
-        <div id="recipe-details-id" style="display:none;">
-          <h1 contenteditable="true" class="title-dashboard"></h1>
-          <div class="image-view"></div>
-          <h4 class="ingredients-header">Ingredients: </h4>
-          <div class="ingredients-list">
-              <textarea class="ingredients-dashboard auth-user-input"></textarea>
-          </div>
-          <h4 class="directions-header">
-            <a class="directions-link">
-              Directions
-            </a>
-          </h4>
-          <div class="directions">
-              <textarea class="directions-dashboard auth-user-input">
+    <div class="recipe-details">
+      <div id="recipe-details-id" style="display:none;">
+        <h1 contenteditable="true" class="title-dashboard"></h1>
+        <div class="image-view"></div>
+        <h4 class="ingredients-header">Ingredients: </h4>
+        <div class="ingredients-list">
+          <textarea class="ingredients-dashboard auth-user-input"></textarea>
+        </div>
+        <h4 class="directions-header">
+          <a class="directions-link">
+            Directions
+          </a>
+        </h4>
+        <div class="directions">
+          <textarea class="directions-dashboard auth-user-input">
               </textarea>
-          </div>
+        </div>
 
-          <button class="button-secondary pure-button update-button" onclick="updateRecipe(this.parentNode.parentNode); ">Update</button>
+        <button class="button-secondary pure-button update-button"
+          onclick="updateRecipe(this.parentNode.parentNode); ">Update</button>
+      </div>
+    </div>
+
+    <div class="recommendation-list" id="recommendation-view">
+      <div class="search-field"">
+          <h3 class=" recommendation-title">Recommendations:</h3>
+
+        <form class="search-box" id="searchthis" action="/search" style="display:inline;" method="get">
+          <input id="namanyay-search-box" name="q" size="40" type="text" placeholder="What would you like today?" />
+          <input id="namanyay-search-btn" value="Search" type="button" onclick="createRecWidget(this)" />
+        </form>
+      </div>
+
+      <div id="rec-list-view">
+        <div>
+
         </div>
       </div>
 
-      <div class="recommendation-list" id="recommendation-view">
-        <div class="search-field"">
-          <h3 class="recommendation-title">Recommendations:</h3>
+    </div>
 
-          <form class="search-box" id="searchthis" action="/search" style="display:inline;" method="get">
-            <input id="namanyay-search-box" name="q" size="40" type="text" placeholder="Search Recipe"/>
-            <input id="namanyay-search-btn" value="Search" type="button" onclick="createRecWidget(this)"/>
-          </form>
-        </div>
+    <body onload="dashboardCookieCheck()"></body>
 
-        <div id="rec-list-view">
-          <div>
-
-          </div>
-        </div>
-
-  </div>
-  <body onload="dashboardCookieCheck()"></body>
-</HTML> 
-
+    </HTML>
