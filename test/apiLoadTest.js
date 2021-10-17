@@ -2,8 +2,8 @@ import loadtest from 'loadtest';
 
 describe('Recipe APIs', () => {
 
-    describe('Performance Test - GET route /api/v1/recipes', () => {
-        it('GET Request from LocalHost', function(done) {
+    describe('Performance Test - GET for Localhost', () => {
+        it('should return all the recipes', function(done) {
             this.timeout(1000 * 60);
 
             const options = {
@@ -25,8 +25,8 @@ describe('Recipe APIs', () => {
         });
     });
 
-    describe('Performance Test - GET route /api/v1/recipes', () => {
-      it('GET Request from Heroku', function(done) {
+    describe('Performance Test - GET for Heroku', () => {
+      it('should return all the recipes', function(done) {
           this.timeout(1000 * 60);
 
           const options = {
