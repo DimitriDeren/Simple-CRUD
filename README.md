@@ -19,8 +19,7 @@ You will end up in the dashboard where all users can see the recipes that has be
 
 # What error handling has been implemented in your system
 
-
-
+For the REST API, all errors encountered are caught as they occur and will be returned in the HTTP response status and response body. Depending on the error encountered a different response status code is returned, ranging from ERROR 400 - 500. An ERROR 400 code is returned when an invalid password is passed during the authentication process. An ERROR 404 is returned when the requested resource is not found. An ERROR 500 is returned when a invalid connection is encountered.
 
 
 # Database Design
