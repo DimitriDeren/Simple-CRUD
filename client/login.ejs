@@ -5,51 +5,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles/style.css">
     <script src="/scripts/password.js"></script>
-    <script src="/scripts/api/password.controller.js"></script>
     <script src="http://localhost:5000/scripts/api/client.account.controller.js"></script>
     <script src="http://localhost:5000/scripts/config/config.js"></script>
-    <script>
-        function checkCookie() {
-            let user = getCookie("username");
-            if (user != "") {
-                alert("Welcome back " + user);
-            } else {
-                user = prompt("Please enter your name:", "");
-                if (user != "" && user != null) {
-                    setCookie("username", user, 365);
-                }
-            }
-        }
-
-        function setCookie(cname, cvalue, exdays) {
-            const d = new Date();
-            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-            let expires = "expires=" + d.toUTCString();
-            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-        }
-
-        function getCookie(cname) {
-            let name = cname + "=";
-            let ca = document.cookie.split(';');
-            for (let i = 0; i < ca.length; i++) {
-                let c = ca[i];
-                while (c.charAt(0) == ' ') {
-                    c = c.substring(1);
-                }
-                if (c.indexOf(name) == 0) {
-                    return c.substring(name.length, c.length);
-                }
-            }
-            return "";
-        }
-
-    </script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="616876382894-b7reoativof6s609fk02vtoviqkjjh3t.apps.googleusercontent.com">
 </head>
 
 <div class="topnav">
     <a class="top-buttons" href="/client">Home</a>
     <a class="top-buttons" href="/client/add_recipe">Add Recipe</a>
-    <a class="active top-buttons" href="/client/login_page">Log In</a>
+    <a class="active top-buttons" href="/client/login_page">Account</a>
 </div>
 
 <div>
@@ -66,10 +31,11 @@
         </p>
 
         <button id="loginSubmit" class="button loginButton" onclick="submitLogin()">LOG IN</button>
-
+        
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
     </div>
 </div>
 
-<body onload="checkCookie()"></body>
+<body onload="loginCookieCheck()"></body>
 
 </HTML>

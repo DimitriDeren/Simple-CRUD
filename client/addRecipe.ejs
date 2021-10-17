@@ -11,41 +11,16 @@
     <script src="/scripts/api/controller.js" ></script>    
     <script src="/scripts/config/config.js" ></script>
     <script src="/scripts/models/recipeModel.js"></script>
-
-    <script>
-        function checkCookie() {
-            let user = getCookie("username");
-            if (user == "") {
-                alert("You must be logged in to access this page");
-                window.location.href ="/client";
-            }
-        }
-
-        function getCookie(cname) {
-            let name = cname + "=";
-            let ca = document.cookie.split(';');
-            for (let i = 0; i < ca.length; i++) {
-                let c = ca[i];
-                while (c.charAt(0) == ' ') {
-                    c = c.substring(1);
-                }
-                if (c.indexOf(name) == 0) {
-                    return c.substring(name.length, c.length);
-                }
-            }
-            return "";
-        }
-
-    </script>
+    <script src="http://localhost:5000/scripts/api/client.account.controller.js"></script>
 </head>
 
 
 <div class="home-view">
 
     <div class="topnav">
-        <a class="top-buttons" href="/client/">Home</a>
+        <a class="top-buttons" href="/client">Home</a>
         <a class="active top-buttons" href="/client/add_recipe">Add Recipe</a>
-        <a class="top-buttons" href="/client/login_page">Log In</a>
+        <a class="top-buttons" href="/client/login_page">Account</a>
     </div>
 
 <!-- Form Body -->
@@ -87,5 +62,5 @@
 </div>
 
 
-<body onload="checkCookie()"></body>
+<body onload="addRecipeCookieCheck()"></body>
 </HTML>

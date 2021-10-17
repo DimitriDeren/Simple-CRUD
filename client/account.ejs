@@ -1,0 +1,26 @@
+<!-- User profile page that provides usernane and logout function -->
+<!DOCTYPE html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/style.css">
+    <script src="http://localhost:5000/scripts/api/client.account.controller.js"></script>
+    <script src="http://localhost:5000/scripts/config/config.js"></script>
+</head>
+
+<!-- top nav bar -->
+<div class="topnav">
+    <a class="top-buttons" href="/client">Home</a>
+    <a class="top-buttons" href="/client/add_recipe">Add Recipe</a>
+    <a class="active top-buttons" href="/client/account_page">Account</a>
+</div>
+
+<!-- displays account details, - need to add user name -->
+<div class="container">
+    <div>
+        <h1> Hello user, you are currently signed in.</h1>
+        <button id="logoutSubmit" class="button logoutButton" onclick="submitLogout()">LOG OUT</button>
+    </div>
+</div>
+
+</HTML>
