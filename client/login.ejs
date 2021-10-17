@@ -7,6 +7,8 @@
     <script src="/scripts/password.js"></script>
     <script src="http://localhost:5000/scripts/api/client.account.controller.js"></script>
     <script src="http://localhost:5000/scripts/config/config.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="616876382894-b7reoativof6s609fk02vtoviqkjjh3t.apps.googleusercontent.com">
 </head>
 
 <div class="topnav">
@@ -29,10 +31,11 @@
         </p>
 
         <button id="loginSubmit" class="button loginButton" onclick="submitLogin()">LOG IN</button>
-
+        
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
     </div>
 </div>
 
-<body onload="checkCookie()"></body>
+<body onload="loginCookieCheck()"></body>
 
 </HTML>

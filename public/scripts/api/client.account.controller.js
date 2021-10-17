@@ -82,11 +82,24 @@ async function postNewRegistration(userName, password) {
     //return response.status;
 }
 
+function loginCookieCheck() {
+    if (checkCookie()) {
+        window.location.href ="/client/account_page";
+    }
+}
+
+function dashboardCookieCheck() {
+    if (!checkCookie()) {
+        window.location.href ="/client/guest_dashboard";
+    }
+}
+
 function checkCookie() {
     let user = getCookie("username");
     if (user != "") {
-        alert("Cookie found, Reroute to account page");
-        window.location.href ="/client/account_page";
+        return true;
+    } else {
+        return false;
     }
 }
 

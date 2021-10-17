@@ -23,6 +23,11 @@ router
     .get((req, res) => 
         res.render("account", {}));
 
+// router
+//     .route("/guess_dashboard")
+//     .get((req, res) => 
+//         res.render("guess.dashboard", {}));
+
 router
     .route("/add_recipe")
     .get((req, res) => 
