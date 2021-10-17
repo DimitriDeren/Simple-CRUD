@@ -12,6 +12,12 @@ function signOut() {
     });
   }
 
+  function onLoad() {
+    gapi.load('auth2', function() {
+      gapi.auth2.init();
+    });
+  }
+
 /* when log in form is submitted */
 function submitLogin() {
     let userName = document.getElementById('loginUser').value;
