@@ -8,9 +8,9 @@ const router = express.Router();
 router
     .route("/")
     .get(RecipesController.apiGetRecipes)
-    .post(passport.authenticate('local'), RecipesController.apiPostRecipes)
-    .put(passport.authenticate('local'), RecipesController.apiUpdateRecipe)
-    .delete(passport.authenticate('local'), RecipesController.apiDeleteRecipe);
+    .post(RecipesController.apiPostRecipes)
+    .put(RecipesController.apiUpdateRecipe)
+    .delete(RecipesController.apiDeleteRecipe);
 
 router
     .route("/id/:id")
