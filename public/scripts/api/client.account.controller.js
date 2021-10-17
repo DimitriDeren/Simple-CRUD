@@ -2,6 +2,11 @@
 function submitLogout() {
     document.cookie = "username=; expires=Saturday, 01 Jan 2000 00:00:00 UTC; path=/";
     window.location.href ="/client/login_page";
+    try {
+        mGoogleSignInClient.signOut();
+    } catch (e) {
+        console.log("no google acc attached");
+    }
 }
 
 /* when log in form is submitted */
@@ -158,6 +163,6 @@ function onSignIn(googleUser) {
     // var id_token = googleUser.getAuthResponse().id_token;
     // console.log("ID Token: " + id_token);
 
-    setCookie("username", googleUser.getAuthResponse().id_token, 30);
+    setCookie("username", profile.getName(), 30);
   }
 
