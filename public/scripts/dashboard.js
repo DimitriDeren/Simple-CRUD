@@ -89,17 +89,14 @@ function displayRecipe(recData){
   var ingredients = document.querySelector(".ingredients-dashboard"); //gets the ingredients field value
   var directions = document.querySelector(".directions-link"); //gets the directions field value
   var imageView = document.querySelector(".image-view");
+  var directionsSec = document.querySelector(".directions");
 
   title.innerText = recipe.title;
   ingredients.value = recipe.ingredients.join("\n");
 
-  let link = document.createElement('a');
   directions.setAttribute('href', recipe.url);
-  // let direction = "Directions:";
-  // link.appendChild(direction);
-  
-  // directions.innerText = "";
-  // directions.appendChild(link);
+  directions.setAttribute('target', "_blank");
+  directionsSec.innerText = "";
 
   let img = document.createElement('img');
   img.src = recipe.image;
