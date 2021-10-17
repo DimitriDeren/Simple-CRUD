@@ -88,6 +88,13 @@ function loginCookieCheck() {
     }
 }
 
+function addRecipeCookieCheck() {
+    if (!checkCookie()) {
+        window.location.href ="/client/guest_dashboard";
+        alert("You need to be logged in to access this page")
+    }
+}
+
 function dashboardCookieCheck() {
     if (!checkCookie()) {
         window.location.href ="/client/guest_dashboard";
