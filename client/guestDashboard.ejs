@@ -1,64 +1,67 @@
 <!-- dashboard for guests -->
 <!DOCTYPE html>
 
-  <head>
-    <link rel="stylesheet" href="/styles/style.css">
-    <script src="/scripts/dashboard.js"></script>
-    <script src="/scripts/api/controller.js" ></script>    
-    <script src="/scripts/config/config.js" ></script>
-    <script src="/scripts/models/recipeModel.js"></script>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
-  </head>
-  
-  <div class="home-view">
+<head>
+  <link rel="stylesheet" href="/styles/style.css">
+  <script src="/scripts/dashboard.js"></script>
+  <script src="/scripts/api/controller.js"></script>
+  <script src="/scripts/config/config.js"></script>
+  <script src="/scripts/models/recipeModel.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <div class="topnav">
+</head>
 
-      <a class="active top-buttons" href="/client/guest_dashboard">Home</a>
-      <a class="top-buttons" href="/client/add_recipe">Add Recipe</a>
-      <a class="top-buttons" href="/client/login_page">Account</a>
+<div class="home-view">
+
+  <div class="topnav">
+
+    <a class="active top-buttons" href="/client/guest_dashboard">Home</a>
+    <a class="top-buttons" href="/client/add_recipe">Add Recipe</a>
+    <a class="top-buttons" href="/client/login_page">Account</a>
+  </div>
+
+  <div id="recipe" class="recipe-view">
+    <div class="list-view">
+      <% for (var i=0; i<recipes.length; i++) { %>
+        <div class="recipe-widget" id=<%=recipes[i]._id%>>
+          <p class="recipe-title">
+            <%= recipes[i].title %>
+          </p>
+          <i class="fa fa-angle-right right-icon" onclick="getRecipe(this.parentNode); toggleDisplay();"></i>
+        </div>
+        <% } %>
     </div>
 
-    <div id = "recipe" class = "recipe-view">
-      <div class="list-view">
-        <% for (var i=0; i<recipes.length; i++) { %>
-          <div class="recipe-widget" id=<%=recipes[i]._id%>>
-            <p class="recipe-title"> <%= recipes[i].title %> </p>
-            <i class="fa fa-angle-right right-icon" onclick="getRecipe(this.parentNode); toggleDisplay();"></i>
-          </div>
-        <% } %>
-      </div>
-
-      <div class="recipe-details">
-        <div id="recipe-details-id" style="display:none;">
-          <h1 class="title-dashboard"></h1>
-          <div class="ingredients-list">
-              <p class="ingredients-dashboard auth-user-input"></p>
-          </div>
-          <div class="directions">
-              <p class="directions-dashboard auth-user-input"></p>
-          </div>
+    <div class="recipe-details">
+      <div id="recipe-details-id" style="display:none;">
+        <h1 class="title-dashboard"></h1>
+        <div class="ingredients-list">
+          <p class="ingredients-dashboard auth-user-input"></p>
+        </div>
+        <div class="directions">
+          <p class="directions-dashboard auth-user-input"></p>
         </div>
       </div>
+    </div>
 
-      <div class="recommendation-list">
-        <h3 class="recommendation-title">Recommendations:</h3>
+    <div class="recommendation-list" id="recommendation-view">
+      <div class="search-field">
+        <h3 class=" recommendation-title">Recommendations:</h3>
 
         <form class="search-box" id="searchthis" action="/search" style="display:inline;" method="get">
-          <input id="namanyay-search-box" name="q" size="40" type="text" placeholder="Search Recipe"/>
-          <input id="namanyay-search-btn" value="Search" type="button" onclick="getRequestRecommendation()"/>
+          <input id="namanyay-search-box" name="q" size="40" type="text" placeholder="Search Recipe" />
+          <input id="namanyay-search-btn" value="Search" type="button" onclick="createRecWidget(this)" />
         </form>
-
-        <div class="recipe-widget">
-            <i class="fa fa-angle-left left-icon" onclick="getRecipe(this.parentNode); toggleDisplay();"></i>
-            <p class="recipe-title"> </p>
-          </div>
-        </div>
       </div>
+
+
+    <div id="rec-list-view">
+      <div>
+
+      </div>
+    </div>
 
   </div>
 
-</HTML> 
-
+    </HTML>
