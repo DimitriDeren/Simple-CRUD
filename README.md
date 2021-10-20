@@ -1,3 +1,6 @@
+# Presentation slides
+https://docs.google.com/presentation/d/1DCzlWOs0f6YkEEG3Djm7Ze_9GvwhnjNKx4PtVveoCQg/edit#slide=id.gf3894dc225_1_2
+
 # How to use the system
 
 - Go into the root folder of the project
